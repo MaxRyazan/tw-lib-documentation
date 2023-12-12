@@ -1,10 +1,10 @@
 <script setup>
 import {shallowRef} from "vue";
-import HomeComponent from "@/components/HomeComponent.vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
-import TestComponent from "@/TestComponent.vue";
+import HomeComponent from '@/components/HomeComponent.vue'
 import TwButton from "@/documents/TwButton.vue";
 import TwInput from "@/documents/TwInput.vue";
+import TwDropdown from '@/documents/TwDropdown.vue'
 
 const currentComponent = shallowRef(HomeComponent)
 </script>
@@ -12,15 +12,17 @@ const currentComponent = shallowRef(HomeComponent)
 <template>
     <div class="header">
         <img src="./assets/img/logo.png" alt="logo">
+        <a href="https://github.com/MaxRyazan/tw-lib-documentation" style="color: #3eaf7c;">github repo</a>
     </div>
     <div class="main_container">
         <div class="nav">
             <p class="nav__title">Компоненты</p>
             <div class="nav__list">
-                <div @click="currentComponent=TwTableBaseDoc" class="nav__list_item">TwTableBase</div>
-                <div @click="currentComponent=TwButton" class="nav__list_item">TwButton</div>
-                <div @click="currentComponent=TwInput" class="nav__list_item">TwInput</div>
-<!--                <div @click="currentComponent=TestComponent" class="nav__list_item">TestComponent</div>-->
+                <div @click="currentComponent=HomeComponent" class="nav__list_item" :class="{'tw_active': currentComponent === HomeComponent}">About</div>
+                <div @click="currentComponent=TwTableBaseDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwTableBaseDoc }">TwTableBase</div>
+                <div @click="currentComponent=TwButton" class="nav__list_item" :class="{'tw_active': currentComponent === TwButton}">TwButton</div>
+                <div @click="currentComponent=TwInput" class="nav__list_item" :class="{'tw_active': currentComponent === TwInput}">TwInput</div>
+                <div @click="currentComponent=TwDropdown" class="nav__list_item" :class="{'tw_active': currentComponent === TwDropdown}">TwDropdown</div>
             </div>
         </div>
         <div class="wrapper_main">
@@ -76,8 +78,13 @@ const currentComponent = shallowRef(HomeComponent)
   border-bottom: 2px solid $green;
   display: flex;
   justify-content: center;
+  align-items: center;
   & img {
     height: 100%;
+  }
+  & a {
+    position: absolute;
+    right: 20px;
   }
 }
 .wrapper_main{
@@ -87,5 +94,8 @@ const currentComponent = shallowRef(HomeComponent)
   align-items: center;
   justify-content: end;
   overflow: hidden;
+}
+.tw_active {
+  color: $green;
 }
 </style>
