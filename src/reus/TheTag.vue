@@ -33,25 +33,4 @@ defineProps<{ tag: string, title: string }>()
   align-items: center;
 }
 
-.code {
-  white-space: nowrap;
-  position: relative;
-  padding: 5px;
-  width: 100%;
-
-  &__tag {
-    display: flex;
-    color: #E8BF6A;
-  }
-
-  &__attrs {
-    color: white;
-  }
-
-  &__title {
-    color: white;
-    padding-left: 4px;
-  }
-
-}
 </style>
