@@ -67,3 +67,14 @@ body, * {
     flex-direction: column;
     margin-left: 15px;
 }
+.code {
+    &__tag {
+        color: #E8BF6A;
+    }
+    &__attrs{
+        color: white;
+    }
+    &__title{
+        color: white;
+    }
+}
