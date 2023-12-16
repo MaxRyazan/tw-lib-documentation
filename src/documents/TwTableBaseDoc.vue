@@ -23,8 +23,12 @@ const withFixed = `Числовое значение округления пар
 const widthDesc = `Ширина таблицы. Строка, формата '100px' или '300rem'. Допустимы любые единицы измерения.`
 const heightDesc = `Высота таблицы. Строка, формата '100px' или '300rem'. Допустимы любые единицы измерения.`
 const tableBgc = `Цвет заливки таблицы.`
+const tableBorder = `Border для всей таблицы.`
 const headerBgc = `Цвет заливки header таблицы.`
 const headerFontColor = `Цвет текста в header таблицы.`
+
+const headerFontFamily = `Font family для header.`
+
 const headerFontSize = `Размер текста в header таблицы.`
 const cellPadding = `Значение padding в ячейках таблицы. Формат '2px' или '2px 4px'`
 const cellFontSize = `Размер текста в ячейках таблицы`
@@ -52,8 +56,10 @@ const props = [
     ['height', 'Нет', 'String', heightDesc],
     ['cell_min_width', 'Нет', 'String', cellMinWidth],
     ['table_bgc', 'Нет', 'String', tableBgc],
+    ['table_border', 'Нет', 'String', tableBorder],
     ['header_bgc', 'Нет', 'String', headerBgc],
     ['header_font_color', 'Нет', 'String', headerFontColor],
+    ['header_font_family', 'Нет', 'String', headerFontFamily],
     ['header_font_size', 'Нет', 'String', headerFontSize],
     ['cell_font_size', 'Нет', 'String', cellFontSize],
     ['cell_font_color', 'Нет', 'String', cellFontColor],
@@ -85,7 +91,7 @@ const emits = [
                                red_when_sub_zero
                                header_font_color="green"
                                :row_custom_settings="[
-                                    {idx:0, textColor: 'darkorange', fontSize: '16px', bgc: 'rgb(255, 240, 219)'},
+                                    {idx:0, textColor: 'darkorange', fontSize: '16px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
                                 ]"
                 ></tw-table-base>
             </div>
