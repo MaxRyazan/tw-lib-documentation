@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {shallowRef} from "vue";
+import {Ref, ref, shallowRef} from "vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
 import HomeComponent from '@/components/HomeComponent.vue'
 import TwButtonDoc from "@/documents/TwButtonDoc.vue";
@@ -7,18 +7,18 @@ import TwDropdownDoc from "@/documents/TwDropdownDoc.vue";
 import TwInputDoc from "@/documents/TwInputDoc.vue";
 
 const currentComponent = shallowRef(HomeComponent)
+const burger: Ref<HTMLElement> = ref()
+
 function toggleBurgerVisible(){
-    const burger: HTMLElement = document.querySelector('.nav')
-    if(burger) {
-        if(!burger.classList.contains('show')) burger.classList.add('show')
-        else burger.classList.remove('show')
+    if(burger.value) {
+        if(!burger.value.classList.contains('show')) burger.value.classList.add('show')
+        else burger.value.classList.remove('show')
     }
 }
 
 function seeThis(clickedComponent:any){
     currentComponent.value = clickedComponent
-    const burger: HTMLElement = document.querySelector('.nav')
-    if(burger) burger.classList.remove('show')
+    if(burger.value) burger.value.classList.remove('show')
 }
 </script>
 
@@ -29,7 +29,7 @@ function seeThis(clickedComponent:any){
         <a href="https://github.com/MaxRyazan/tw-lib-documentation" style="color: #3eaf7c;">github repo</a>
     </div>
     <div class="main_container">
-        <div class="nav">
+        <div class="nav" ref="burger">
             <p class="nav__title">Компоненты</p>
             <div class="nav__list">
                 <div @click="seeThis(HomeComponent)" class="nav__list_item" :class="{'tw_active': currentComponent === HomeComponent}">About</div>
