@@ -31,9 +31,9 @@ function clickOnSubtitle(subtitle: string){
 
 <template>
 <div class="sub_nav">
-    <span @click="clickOnSubtitle('Описание')" :class="{'active': currentSubTitle === 'Описание'}">Описание</span>
-    <span @click="clickOnSubtitle('Api')" :class="{'active': currentSubTitle === 'Api'}">Api</span>
-    <span @click="clickOnSubtitle('Слоты')" :class="{'active': currentSubTitle === 'Слоты'}">Слоты</span>
+    <span @click="clickOnSubtitle('Описание')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Описание'}">Описание</span>
+    <span @click="clickOnSubtitle('Api')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Api'}">Api</span>
+    <span @click="clickOnSubtitle('Слоты')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Слоты'}">Слоты</span>
 </div>
 </template>
 
@@ -48,5 +48,9 @@ function clickOnSubtitle(subtitle: string){
 }
 .active {
   color: orange;
+  border-bottom: 1px solid orange;
+}
+.sub_nav_item{
+  padding: 5px;
 }
 </style>

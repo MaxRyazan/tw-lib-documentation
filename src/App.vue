@@ -2,9 +2,9 @@
 import {shallowRef} from "vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
 import HomeComponent from '@/components/HomeComponent.vue'
-import TwInput from "@/documents/TwInput.vue";
-import TwDropdown from '@/documents/TwDropdown.vue'
 import TwButtonDoc from "@/documents/TwButtonDoc.vue";
+import TwDropdownDoc from "@/documents/TwDropdownDoc.vue";
+import TwInputDoc from "@/documents/TwInputDoc.vue";
 
 const currentComponent = shallowRef(HomeComponent)
 </script>
@@ -21,8 +21,8 @@ const currentComponent = shallowRef(HomeComponent)
                 <div @click="currentComponent=HomeComponent" class="nav__list_item" :class="{'tw_active': currentComponent === HomeComponent}">About</div>
                 <div @click="currentComponent=TwTableBaseDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwTableBaseDoc }">TwTableBase</div>
                 <div @click="currentComponent=TwButtonDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwButtonDoc}">TwButton</div>
-                <div @click="currentComponent=TwInput" class="nav__list_item" :class="{'tw_active': currentComponent === TwInput}">TwInput</div>
-                <div @click="currentComponent=TwDropdown" class="nav__list_item" :class="{'tw_active': currentComponent === TwDropdown}">TwDropdown</div>
+                <div @click="currentComponent=TwInputDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwInputDoc}">TwInput</div>
+                <div @click="currentComponent=TwDropdownDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwDropdownDoc}">TwDropdown</div>
             </div>
         </div>
         <div class="wrapper_main">
