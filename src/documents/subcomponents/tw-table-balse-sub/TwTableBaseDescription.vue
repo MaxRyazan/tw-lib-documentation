@@ -6,6 +6,20 @@ import ScriptSetupTag from "@/reus/ScriptSetupTag.vue";
 import ReactiveVariable from "@/reus/ReactiveVariable.vue";
 import TheTag from "@/reus/TheTag.vue";
 import TheArrayInCode from "@/reus/TheArrayInCode.vue";
+import {onMounted, ref} from "vue";
+
+const smallScreen = ref(false)
+
+onMounted(() => {
+    if(window.innerWidth <= 1150){
+        smallScreen.value = true
+    }
+    window.addEventListener('resize' ,() => {
+        if(window.innerWidth <= 1150){
+            smallScreen.value = true
+        } else  smallScreen.value = false
+    })
+})
 </script>
 
 <template>
@@ -15,7 +29,7 @@ import TheArrayInCode from "@/reus/TheArrayInCode.vue";
 
     <div class="container">
         <div class="example_container">
-            <tw-table-base :header="['Parameter', 'Current value', 'Measure']"
+            <tw-table-base v-if="!smallScreen" :header="['Parameter', 'Current value', 'Measure']"
                            :body="[
                                    {a:'Mechanical properties:', b: '', measure: ''},
                                    {a:'Pressure', b:12, measure: 'atm.'},
@@ -29,12 +43,27 @@ import TheArrayInCode from "@/reus/TheArrayInCode.vue";
                                     {idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
                                 ]"
             ></tw-table-base>
+            <tw-table-base v-else :header="['Parameter', 'Current value', 'Measure']"
+                           :body="[
+                                   {a:'Mech. props:', b: '', measure: ''},
+                                   {a:'Pressure', b:12, measure: 'atm.'},
+                                   {a:'Temperature', b:-28, measure: 'f.'},
+                                   {a:'Danger index', b: 3, measure: 'lvl.'}
+                               ]"
+                           width="80%"
+                           red_when_sub_zero
+                           header_font_color="green"
+                           :row_custom_settings="[
+                                    {idx:0, textColor: 'darkorange', fontSize: '14px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
+                                ]"
+            ></tw-table-base>
         </div>
         <div class="tag_wrapper">
             <template-tag>
                 <the-tag title="" tag="tw-table-base">
                     <div class="attrs_list">
-                        <span>width="700px"</span>
+                        <span v-if="!smallScreen">width="700px"</span>
+                        <span v-else>width="80%"</span>
                         <span>red_when_sub_zero</span>
                         <span>header_font_color="green"</span>
                         <span style="display: flex">
@@ -51,10 +80,12 @@ import TheArrayInCode from "@/reus/TheArrayInCode.vue";
             </template-tag>
             <script-setup-tag>
                 <reactive-variable dataType="array" var-name="rowsSettings">
-                    <the-object-in-code :object="{idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)'}" />
+                    <the-object-in-code v-if="!smallScreen" :object="{idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)'}" />
+                    <the-object-in-code v-else :object="{idx:0, textColor: 'darkorange', fontSize: '14px', bgc: 'rgb(255, 240, 219)'}" />
                 </reactive-variable>
                 <reactive-variable dataType="array" var-name="body">
-                    <the-object-in-code :object="{a:'Mechanical properties:', b: '', measure: ''}" />
+                    <the-object-in-code v-if="!smallScreen" :object="{a:'Mechanical properties:', b: '', measure: ''}" />
+                    <the-object-in-code v-else :object="{a:'Mech. props:', b: '', measure: ''}" />
                     <the-object-in-code :object="{a:'Pressure', b:12, measure: 'atm.'}" />
                     <the-object-in-code :object="{a:'Temperature', b:1011, measure: 'f.'}" />
                     <the-object-in-code :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />

@@ -56,7 +56,7 @@ function seeThis(clickedComponent:any){
   gap: 5px;
 }
 .nav {
-  @media(max-width: 540px){
+  @media(max-width: 640px){
     position: absolute;
     border-right: none;
     z-index: 99;
@@ -79,7 +79,7 @@ function seeThis(clickedComponent:any){
     font-size: 22px;
     padding: 25px 5px;
     cursor: default;
-    @media (max-width: 540px) {
+    @media (max-width: 640px) {
       display: none;
     }
   }
@@ -92,7 +92,7 @@ function seeThis(clickedComponent:any){
       color: orange;
       cursor: pointer;
       display: inline-block;
-      @media (max-width: 540px) {
+      @media (max-width: 640px) {
         padding: 10px 5px;
       }
       @media (max-width: 800px) {
@@ -128,7 +128,7 @@ function seeThis(clickedComponent:any){
   }
 }
 .wrapper_main{
-  @media(max-width: 540px){
+  @media(max-width: 640px){
     width: 100%;
     padding: 10px 10px;
   }
@@ -165,7 +165,7 @@ function seeThis(clickedComponent:any){
     height: 2px;
     background-color: white;
   }
-  @media (max-width: 540px) {
+  @media (max-width: 640px) {
     display: block;
   }
 }
