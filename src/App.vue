@@ -11,6 +11,7 @@ const currentComponent = shallowRef(HomeComponent)
 
 <template>
     <div class="header">
+        <div class="burger_nav scss_green">Компоненты</div>
         <img src="./assets/img/logo.png" alt="logo">
         <a href="https://github.com/MaxRyazan/tw-lib-documentation" style="color: #3eaf7c;">github repo</a>
     </div>
@@ -42,9 +43,18 @@ const currentComponent = shallowRef(HomeComponent)
   gap: 5px;
 }
 .nav {
+  @media(max-width: 540px){
+    position: absolute;
+    border-right: none;
+    z-index: 99;
+    background-color: rgb(36, 50, 87);
+    width: 120px;
+    min-width: 120px;
+    top: -2px;
+  }
   border-right: 2px solid $green;
-  min-width: 300px;
-  width: 25%;
+  min-width: 200px;
+  width: 20%;
   position: relative;
   &__title {
     color: $green;
@@ -52,6 +62,9 @@ const currentComponent = shallowRef(HomeComponent)
     font-size: 22px;
     padding: 25px 5px;
     cursor: default;
+    @media (max-width: 540px) {
+      display: none;
+    }
   }
   &__list {
     max-width: 80%;
@@ -62,6 +75,9 @@ const currentComponent = shallowRef(HomeComponent)
       color: orange;
       cursor: pointer;
       display: inline-block;
+      @media (max-width: 540px) {
+        padding: 10px 5px;
+      }
       &:hover {
         transition: .5s;
         color: $green;
@@ -86,15 +102,29 @@ const currentComponent = shallowRef(HomeComponent)
     position: absolute;
     right: 20px;
   }
+  & .burger_nav {
+    position: absolute;
+    left: 20px;
+  }
 }
 .wrapper_main{
+  @media(max-width: 540px){
+    width: 100%;
+    padding: 10px 10px;
+  }
   overflow-y: scroll;
   padding: 50px 30px;
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: end;
 }
 .tw_active {
   color: $green;
+}
+.burger_nav {
+  display: none;
+  @media (max-width: 540px) {
+    display: block;
+  }
 }
 </style>

@@ -16,11 +16,11 @@ async function copy() {
 </script>
 
 <template>
-    <div style="width: 100%; align-self: start; color: #3eaf7c; display: flex; flex-direction: column; gap: 15px; align-items: center">
-        <p style="font-size: 30px; margin-bottom: 20px;">Библиотека UI компонентов для Vue3.</p>
+    <div class="home_wrapper">
+        <p class="main_title">Библиотека UI компонентов для Vue3.</p>
         <p>Ноль зависимостей.</p>
-        <p>Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
-        <p>Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
+        <p style="text-align: center">Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
+        <p style="text-align: center">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
         <p style="text-align: center">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
         <div class="connect">
             <p>Подключение в ваш проект:</p>
@@ -30,7 +30,7 @@ async function copy() {
                 <input value="npm i twins-vue" id="tw_copy_text" readonly type="text">
                 <span class="pi pi-copy" @click="copy"></span>
             </div>
-            <div style="display: flex; gap: 30px; margin-top: 30px;">
+            <div class="connect_options">
                 <div class="copy_text">
                     <span class="filename">main.js</span>
                     <span>import './assets/main.scss'</span>
@@ -47,6 +47,7 @@ async function copy() {
                 <div class="copy_text">
                     <span class="filename">your main style.scss file</span>
                     <span class="copy_text_import">@import 'twins-vue/tw-styles.css';</span>
+                    <span>...</span>
                 </div>
             </div>
 
@@ -106,7 +107,7 @@ async function copy() {
   background-color: rgb(36, 50, 87);
   border-radius: 12px;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 5px;
 }
 .copy_text {
   position: relative;
@@ -115,6 +116,10 @@ async function copy() {
   display: flex;
   flex-direction: column;
   color: white;
+  height: 200px;
+  @media (max-width: 540px) {
+    font-size: 12px;
+  }
 }
 .filename {
   position: absolute;
@@ -128,5 +133,34 @@ async function copy() {
 }
 .copy_text_import{
   color: $green;
+}
+.connect_options{
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+.main_title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  @media (max-width: 540px) {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+  }
+}
+.home_wrapper {
+  width: 100%;
+  align-self: start;
+  color: #3eaf7c;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  @media (max-width: 540px) {
+    gap: 5px;
+  }
 }
 </style>
