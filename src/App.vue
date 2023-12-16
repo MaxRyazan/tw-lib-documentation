@@ -2,9 +2,9 @@
 import {shallowRef} from "vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
 import HomeComponent from '@/components/HomeComponent.vue'
-import TwButton from "@/documents/TwButton.vue";
 import TwInput from "@/documents/TwInput.vue";
 import TwDropdown from '@/documents/TwDropdown.vue'
+import TwButtonDoc from "@/documents/TwButtonDoc.vue";
 
 const currentComponent = shallowRef(HomeComponent)
 </script>
@@ -20,7 +20,7 @@ const currentComponent = shallowRef(HomeComponent)
             <div class="nav__list">
                 <div @click="currentComponent=HomeComponent" class="nav__list_item" :class="{'tw_active': currentComponent === HomeComponent}">About</div>
                 <div @click="currentComponent=TwTableBaseDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwTableBaseDoc }">TwTableBase</div>
-                <div @click="currentComponent=TwButton" class="nav__list_item" :class="{'tw_active': currentComponent === TwButton}">TwButton</div>
+                <div @click="currentComponent=TwButtonDoc" class="nav__list_item" :class="{'tw_active': currentComponent === TwButtonDoc}">TwButton</div>
                 <div @click="currentComponent=TwInput" class="nav__list_item" :class="{'tw_active': currentComponent === TwInput}">TwInput</div>
                 <div @click="currentComponent=TwDropdown" class="nav__list_item" :class="{'tw_active': currentComponent === TwDropdown}">TwDropdown</div>
             </div>
@@ -88,12 +88,11 @@ const currentComponent = shallowRef(HomeComponent)
   }
 }
 .wrapper_main{
-  padding: 30px;
+  overflow-y: scroll;
+  padding: 50px 30px;
   width: 75%;
   display: flex;
-  align-items: center;
   justify-content: end;
-  overflow: hidden;
 }
 .tw_active {
   color: $green;
