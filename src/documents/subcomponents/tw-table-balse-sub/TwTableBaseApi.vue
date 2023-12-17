@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import {onMounted, onUnmounted, reactive, ref} from "vue";
 import {ScreenSizes} from "@/ScreenSizes.js";
 import {getScreenSize} from "@/use/getScreenSize.js";
@@ -90,6 +89,12 @@ const smallProps = [
     ['multicolor', multicolor],
     ['row_custom_settings', rowCustomSettings],
 ]
+const rowSettings = reactive([
+    {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+    {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+    {idx:8, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+    {idx:12, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+])
 
 const emits = [
     ['@push', '{bodyElement, $event}', 'Клик по строке таблицы левой кнопкой мыши'],
@@ -124,12 +129,8 @@ const smallHeader = reactive(['Параметр', 'Описание'])
                 header_font_color="orange"
                 :body="screenSize < ScreenSizes.s1440 ? smallProps : props"
                 :header="screenSize < ScreenSizes.s1440 ? smallHeader : header"
-                :row_custom_settings="[
-                                        {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:8, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:12, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-                                    ]"
+                :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
+                :multicolor="screenSize < ScreenSizes.s1440"
         />
         <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
         <tw-table-base
