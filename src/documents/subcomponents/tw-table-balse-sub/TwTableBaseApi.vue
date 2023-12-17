@@ -1,6 +1,9 @@
-<script setup>
+<script setup lang="ts">
 
-import {onMounted, reactive, ref} from "vue";
+import {onMounted, onUnmounted, reactive, ref} from "vue";
+import {ScreenSizes} from "@/ScreenSizes.js";
+import {getScreenSize} from "@/use/getScreenSize.js";
+import {Ref} from "vue";
 
 const bodyDesc = `Массив данных который отрисовывает таблица. Тип принимаемых
 данных - массив объектов, или массив массивов.`
@@ -94,18 +97,17 @@ const emits = [
     ['@right-click', '{bodyElement, $event}', 'Клик по строке таблицы правой кнопкой мыши']
 ]
 
-const smallScreen = ref(false)
+const screenSize: Ref<number> = ref(ScreenSizes.s1900)
 
 onMounted(() => {
-    if(window.innerWidth <= 1440){
-        smallScreen.value = true
-    }
-    window.addEventListener('resize' ,() => {
-        if(window.innerWidth <= 1440){
-            smallScreen.value = true
-        } else  smallScreen.value = false
+    screenSize.value = getScreenSize()
+    window.addEventListener('resize', () => {
+        screenSize.value = getScreenSize()
+        console.log(screenSize.value)
     })
 })
+onUnmounted(() => window.removeEventListener('resize', () => {screenSize.value = getScreenSize()}))
+
 
 const header = reactive(['Входной параметр', 'Обязательный', 'Тип значения параметра', 'Описание'])
 const smallHeader = reactive(['Параметр', 'Описание'])
@@ -115,13 +117,13 @@ const smallHeader = reactive(['Параметр', 'Описание'])
     <div>
         <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
         <tw-table-base
-                :width="smallScreen ? '100%' : '80%'"
-                :header_font_size="smallScreen ? '1.5vw' : '1vw'"
-                :cell_font_size="smallScreen ? '1.5vw' : '1vw'"
+                :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
+                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
+                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
                 table_bgc="white"
                 header_font_color="orange"
-                :body="smallScreen ? smallProps : props"
-                :header="smallScreen ? smallHeader : header"
+                :body="screenSize < ScreenSizes.s1440 ? smallProps : props"
+                :header="screenSize < ScreenSizes.s1440 ? smallHeader : header"
                 :row_custom_settings="[
                                         {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
                                         {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
@@ -131,9 +133,9 @@ const smallHeader = reactive(['Параметр', 'Описание'])
         />
         <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
         <tw-table-base
-                :width="smallScreen ? '100%' : '80%'"
-                :header_font_size="smallScreen ? '1.5vw' : '1vw'"
-                :cell_font_size="smallScreen ? '1.5vw ' : '1vw'"
+                :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
+                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
+                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
                 header_font_color="orange"
                 table_bgc="white"
                 :header="['Название', 'Аргументы', 'Описание']"
