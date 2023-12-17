@@ -7,6 +7,8 @@ import ReactiveVariable from "@/reus/ReactiveVariable.vue";
 import TheTag from "@/reus/TheTag.vue";
 import TheArrayInCode from "@/reus/TheArrayInCode.vue";
 import {onMounted, ref} from "vue";
+import TheLongObjectInCode from "@/reus/TheLongObjectInCode.vue";
+import TheLongArrayInCode from "@/reus/TheLongArrayInCode.vue";
 
 const smallScreen = ref(false)
 
@@ -15,7 +17,7 @@ onMounted(() => {
         smallScreen.value = true
     }
     window.addEventListener('resize' ,() => {
-        if(window.innerWidth <= 1150){
+        if(window.innerWidth <= 1440){
             smallScreen.value = true
         } else  smallScreen.value = false
     })
@@ -80,18 +82,26 @@ onMounted(() => {
             </template-tag>
             <script-setup-tag>
                 <reactive-variable dataType="array" var-name="rowsSettings">
-                    <the-object-in-code v-if="!smallScreen" :object="{idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)'}" />
-                    <the-object-in-code v-else :object="{idx:0, textColor: 'darkorange', fontSize: '14px', bgc: 'rgb(255, 240, 219)'}" />
+                    <the-object-in-code v-if="!smallScreen" :object="{idx:0, textColor: 'darkorange', fontSize: '18px', fontFamily: 'cursive', bgc: 'rgb(255, 240, 219)'}" />
+                    <the-long-object-in-code v-else :object="{idx:0, textColor: 'darkorange', fontSize: '14px', fontFamily: 'cursive', bgc: 'rgb(255, 240, 219)'}" />
                 </reactive-variable>
                 <reactive-variable dataType="array" var-name="body">
                     <the-object-in-code v-if="!smallScreen" :object="{a:'Mechanical properties:', b: '', measure: ''}" />
-                    <the-object-in-code v-else :object="{a:'Mech. props:', b: '', measure: ''}" />
-                    <the-object-in-code :object="{a:'Pressure', b:12, measure: 'atm.'}" />
-                    <the-object-in-code :object="{a:'Temperature', b:1011, measure: 'f.'}" />
-                    <the-object-in-code :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />
+                    <the-long-object-in-code v-else :object="{a:'Mech. props:', b: '', measure: ''}" />
+
+                    <the-object-in-code v-if="!smallScreen"  :object="{a:'Pressure', b:12, measure: 'atm.'}" />
+                    <the-long-object-in-code v-else :object="{a:'Pressure', b:12, measure: 'atm.'}" />
+
+                    <the-object-in-code v-if="!smallScreen"  :object="{a:'Temperature', b:1011, measure: 'f.'}" />
+                    <the-long-object-in-code v-else :object="{a:'Temperature', b:1011, measure: 'f.'}" />
+
+                    <the-object-in-code v-if="!smallScreen"  :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />
+                    <the-long-object-in-code v-else :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />
+
                 </reactive-variable>
                 <reactive-variable dataType="array" var-name="header">
-                    <the-array-in-code :array="['Parameter', 'Current value','Measure']" />
+                    <the-array-in-code v-if="!smallScreen" :array="['Parameter', 'Current value','Measure']" />
+                    <the-long-array-in-code v-else :array="['Parameter', 'Current value','Measure']" />
                 </reactive-variable>
             </script-setup-tag>
         </div>

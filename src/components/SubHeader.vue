@@ -45,6 +45,9 @@ function clickOnSubtitle(subtitle: string){
   text-transform: uppercase;
   cursor: pointer;
   color: $green;
+  @media (max-width: 480px){
+    gap: 50px;
+  }
 }
 .active {
   color: orange;
