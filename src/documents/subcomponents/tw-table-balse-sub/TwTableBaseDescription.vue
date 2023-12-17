@@ -13,7 +13,7 @@ import TheLongArrayInCode from "@/reus/TheLongArrayInCode.vue";
 const smallScreen = ref(false)
 
 onMounted(() => {
-    if(window.innerWidth <= 1150){
+    if(window.innerWidth <= 1440){
         smallScreen.value = true
     }
     window.addEventListener('resize' ,() => {

@@ -43,7 +43,6 @@ function clickOnSubtitle(subtitle: string){
   display: flex;
   gap: 100px;
   text-transform: uppercase;
-  cursor: pointer;
   color: $green;
   @media (max-width: 480px){
     gap: 50px;
@@ -54,6 +53,7 @@ function clickOnSubtitle(subtitle: string){
   border-bottom: 1px solid orange;
 }
 .sub_nav_item{
+  cursor: pointer;
   padding: 5px;
 }
 </style>

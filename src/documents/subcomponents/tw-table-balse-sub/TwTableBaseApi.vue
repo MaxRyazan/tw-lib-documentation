@@ -1,5 +1,7 @@
 <script setup>
 
+import {onMounted, reactive, ref} from "vue";
+
 const bodyDesc = `Массив данных который отрисовывает таблица. Тип принимаемых
 данных - массив объектов, или массив массивов.`
 const headerDesc = 'Массив данных или объект, который должен содержать названия колонок. Обычно массив строк, или объект ' +
@@ -61,34 +63,77 @@ const props = [
     ['multicolor', 'Нет', 'Boolean', multicolor],
     ['row_custom_settings', 'Нет', 'Array<{idx: Number, textColor: String, bgc: String, fontSize: String, fontFamily: String}>', rowCustomSettings],
 ]
+const smallProps = [
+    ['body', bodyDesc],
+    ['header', headerDesc],
+    ['td_align_left', tdAlignLeftDesc],
+    ['td_align_right', tdAlignRightDesc],
+    ['cell_padding', cellPadding],
+    ['elements_with_tabulation', elementsWithTabulation],
+    ['red_when_sub_zero', redWhenSubZero],
+    ['table_with_select', tableWithSelect],
+    ['with_fixed', withFixed],
+    ['width', widthDesc],
+    ['height', heightDesc],
+    ['cell_min_width', cellMinWidth],
+    ['table_bgc', tableBgc],
+    ['table_border', tableBorder],
+    ['header_bgc', headerBgc],
+    ['header_font_color', headerFontColor],
+    ['header_font_family', headerFontFamily],
+    ['header_font_size', headerFontSize],
+    ['cell_font_size', cellFontSize],
+    ['cell_font_color', cellFontColor],
+    ['multicolor', multicolor],
+    ['row_custom_settings', rowCustomSettings],
+]
 
 const emits = [
     ['@push', '{bodyElement, $event}', 'Клик по строке таблицы левой кнопкой мыши'],
     ['@dab-click', '{bodyElement, $event}', 'Двойной клик по строке таблицы левой кнопкой мыши'],
     ['@right-click', '{bodyElement, $event}', 'Клик по строке таблицы правой кнопкой мыши']
 ]
+
+const smallScreen = ref(false)
+
+onMounted(() => {
+    if(window.innerWidth <= 1440){
+        smallScreen.value = true
+    }
+    window.addEventListener('resize' ,() => {
+        if(window.innerWidth <= 1440){
+            smallScreen.value = true
+        } else  smallScreen.value = false
+    })
+})
+
+const header = reactive(['Входной параметр', 'Обязательный', 'Тип значения параметра', 'Описание'])
+const smallHeader = reactive(['Параметр', 'Описание'])
 </script>
 
 <template>
     <div>
         <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
         <tw-table-base
-                cell_min_width="200px"
-                width="1100px"
+                :width="smallScreen ? '100%' : '80%'"
+                :header_font_size="smallScreen ? '1.5vw' : '1vw'"
+                :cell_font_size="smallScreen ? '1.5vw' : '1vw'"
                 table_bgc="white"
                 header_font_color="orange"
-                :body="props"
-                :header="['Входной параметр', 'Обязательный', 'Тип значения параметра', 'Описание']"
+                :body="smallScreen ? smallProps : props"
+                :header="smallScreen ? smallHeader : header"
                 :row_custom_settings="[
-                                        {idx:0, textColor: 'darkorange', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:3, textColor: 'darkorange', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:8, textColor: 'darkorange', bgc: 'rgb(255, 240, 219)'},
-                                        {idx:12, textColor: 'darkorange', bgc: 'rgb(255, 240, 219)'},
+                                        {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+                                        {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+                                        {idx:8, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+                                        {idx:12, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
                                     ]"
         />
         <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
         <tw-table-base
-                width="1100px"
+                :width="smallScreen ? '100%' : '80%'"
+                :header_font_size="smallScreen ? '1.5vw' : '1vw'"
+                :cell_font_size="smallScreen ? '1.5vw ' : '1vw'"
                 header_font_color="orange"
                 table_bgc="white"
                 :header="['Название', 'Аргументы', 'Описание']"
