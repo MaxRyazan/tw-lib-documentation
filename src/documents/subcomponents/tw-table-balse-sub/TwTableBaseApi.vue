@@ -7,8 +7,8 @@ import ApiSample from "@/reus/samples/ApiSample.vue";
 
 const bodyDesc = `Массив данных который отрисовывает таблица. Тип принимаемых
 данных - массив объектов, или массив массивов.`
-const headerDesc = 'Массив данных или объект, который должен содержать названия колонок. Обычно массив строк, или объект ' +
-    'с примитивными значениями (string | number).'
+const headerDesc = `Массив данных или объект, который должен содержать названия колонок. Обычно массив строк, или объект
+    с примитивными значениями (string | number).`
 
 const tdAlignLeftDesc = `Флаг true | false, добавляющий позиционирование содержимого ячеек таблицы по левому краю.`
 const tdAlignRightDesc = `Флаг true | false, добавляющий позиционирование содержимого ячеек таблицы по правому краю.`
@@ -112,10 +112,10 @@ const smallHeader = reactive(['Параметр', 'Описание'])
     <api-sample
         :props="props"
         :small-props="smallProps"
-        :emits="emits"
         :row-settings="rowSettings"
         :header="header"
-        :small-headerr="smallHeader"
+        :small-header="smallHeader"
+        :emits="emits"
     />
 </template>
 
