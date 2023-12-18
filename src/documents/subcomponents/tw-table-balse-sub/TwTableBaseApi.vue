@@ -3,6 +3,7 @@ import {onMounted, onUnmounted, reactive, ref} from "vue";
 import {ScreenSizes} from "@/ScreenSizes.js";
 import {getScreenSize} from "@/use/getScreenSize.js";
 import {Ref} from "vue";
+import ApiSample from "@/reus/samples/ApiSample.vue";
 
 const bodyDesc = `Массив данных который отрисовывает таблица. Тип принимаемых
 данных - массив объектов, или массив массивов.`
@@ -33,8 +34,8 @@ const cellFontSize = `Размер текста в ячейках таблицы
 const cellFontColor = `Цвет текста в ячейках таблицы`
 const cellMinWidth = `Минимальная ширина ячейки таблицы`
 const multicolor = `Двойная заливка для таблицы. Четные строки имеют другой оттенок, чем нечетные`
-const rowCustomSettings = `Массив объектов формата {idx: Number, textColor: String, bgc: String, fontSize: String, fontFamily: String, bgc: String}, позволяющий поменять стили конкретной строки в таблице.
-idx - номер строки, textColor - цвет текста в строке, bgc - цвет заливки строки, fontSize - размер текста в строке, fontFamily - название шрифта в строке, bgc - цвет заливки этой строки.`
+const rowCustomSettings = `Массив настроек строки, позволяющий поменять стили конкретной строки в таблице.
+idx - номер строки, textColor - цвет текста в строке, fontSize - размер текста в строке, fontFamily - название шрифта в строке, bgc - цвет заливки этой строки.`
 
 
 const props = [
@@ -89,12 +90,12 @@ const smallProps = [
     ['multicolor', multicolor],
     ['row_custom_settings', rowCustomSettings],
 ]
-const rowSettings = reactive([
+const rowSettings = [
     {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
     {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
     {idx:8, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
     {idx:12, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-])
+]
 
 const emits = [
     ['@push', '{bodyElement, $event}', 'Клик по строке таблицы левой кнопкой мыши'],
@@ -119,29 +120,14 @@ const smallHeader = reactive(['Параметр', 'Описание'])
 </script>
 
 <template>
-    <div>
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
-        <tw-table-base
-                :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
-                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
-                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
-                table_bgc="white"
-                header_font_color="orange"
-                :body="screenSize < ScreenSizes.s1440 ? smallProps : props"
-                :header="screenSize < ScreenSizes.s1440 ? smallHeader : header"
-                :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
-                :multicolor="screenSize < ScreenSizes.s1440"
-        />
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
-        <tw-table-base
-                :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
-                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
-                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.5vw' :'1vw')"
-                header_font_color="orange"
-                table_bgc="white"
-                :header="['Название', 'Аргументы', 'Описание']"
-                :body="emits"/>
-    </div>
+    <api-sample
+        :props="props"
+        :small-props="smallProps"
+        :emits="emits"
+        :row-settings="rowSettings"
+        :header="header"
+        :small-headerr="smallHeader"
+    />
 </template>
 
 <style scoped lang="scss">
