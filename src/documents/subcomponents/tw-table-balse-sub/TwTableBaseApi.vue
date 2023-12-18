@@ -103,17 +103,6 @@ const emits = [
     ['@right-click', '{bodyElement, $event}', 'Клик по строке таблицы правой кнопкой мыши']
 ]
 
-const screenSize: Ref<number> = ref(ScreenSizes.s1900)
-
-onMounted(() => {
-    screenSize.value = getScreenSize()
-    window.addEventListener('resize', () => {
-        screenSize.value = getScreenSize()
-        console.log(screenSize.value)
-    })
-})
-onUnmounted(() => window.removeEventListener('resize', () => {screenSize.value = getScreenSize()}))
-
 
 const header = reactive(['Входной параметр', 'Обязательный', 'Тип значения параметра', 'Описание'])
 const smallHeader = reactive(['Параметр', 'Описание'])

@@ -19,7 +19,6 @@ onMounted(() => {
     screenSize.value = getScreenSize()
     window.addEventListener('resize', () => {
         screenSize.value = getScreenSize()
-        console.log(screenSize.value)
     })
 })
 </script>
