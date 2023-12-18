@@ -8,10 +8,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         <p class="component__title">Компонент кнопки. Позволяет создавать как кастомные кнопки, так и использовать готовые шаблоны.</p>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button success>Подтвердить</tw-button>
-                <tw-button warn>Подтвердить</tw-button>
-                <tw-button error>Подтвердить</tw-button>
-                <tw-button color_gamma="violet">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button success>Подтвердить</tw-button>
+                    <tw-button warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button error>Подтвердить</tw-button>
+                    <tw-button color_gamma="violet">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -38,10 +42,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button prime_icon="pi-check" success>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" warn>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" error>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" color_gamma="blue">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" success>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" error>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" color_gamma="blue">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -68,10 +76,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button rounded success>Подтвердить</tw-button>
-                <tw-button rounded warn>Подтвердить</tw-button>
-                <tw-button rounded error>Подтвердить</tw-button>
-                <tw-button rounded color_gamma="rgb(59, 177, 228)">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button rounded success>Подтвердить</tw-button>
+                    <tw-button rounded warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button rounded error>Подтвердить</tw-button>
+                    <tw-button rounded color_gamma="rgb(59, 177, 228)">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -99,10 +111,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button prime_icon="pi-check" rounded success>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded warn>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded error>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded color_gamma="#77008b">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" rounded success>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" rounded error>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded color_gamma="#77008b">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -129,10 +145,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button outline success>Подтвердить</tw-button>
-                <tw-button outline warn>Подтвердить</tw-button>
-                <tw-button outline error>Подтвердить</tw-button>
-                <tw-button outline color_gamma="violet">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline success>Подтвердить</tw-button>
+                    <tw-button outline warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline error>Подтвердить</tw-button>
+                    <tw-button outline color_gamma="violet">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -159,10 +179,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button rounded outline success>Подтвердить</tw-button>
-                <tw-button rounded outline warn>Подтвердить</tw-button>
-                <tw-button rounded outline error>Подтвердить</tw-button>
-                <tw-button rounded outline color_gamma="violet">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button rounded outline success>Подтвердить</tw-button>
+                    <tw-button rounded outline warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button rounded outline error>Подтвердить</tw-button>
+                    <tw-button rounded outline color_gamma="violet">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -189,10 +213,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button prime_icon="pi-check" rounded outline success>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded outline warn>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded outline error>Подтвердить</tw-button>
-                <tw-button prime_icon="pi-check" rounded outline color_gamma="violet">Подтвердить</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" rounded outline success>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline warn>Подтвердить</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" rounded outline error>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline color_gamma="violet">Подтвердить</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -220,10 +248,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button round success>да</tw-button>
-                <tw-button round warn>да</tw-button>
-                <tw-button round error>да</tw-button>
-                <tw-button round color_gamma="violet">да</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button round success>да</tw-button>
+                    <tw-button round warn>да</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button round error>да</tw-button>
+                    <tw-button round color_gamma="violet">да</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="да" tag="tw-button">
@@ -250,10 +282,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button outline round success>нет</tw-button>
-                <tw-button outline round warn>нет</tw-button>
-                <tw-button outline round error>нет</tw-button>
-                <tw-button outline round color_gamma="violet">нет</tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline round success>нет</tw-button>
+                    <tw-button outline round warn>нет</tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline round error>нет</tw-button>
+                    <tw-button outline round color_gamma="violet">нет</tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="нет" tag="tw-button">
@@ -280,10 +316,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button prime_icon="pi-check" round success></tw-button>
-                <tw-button prime_icon="pi-check" round warn></tw-button>
-                <tw-button prime_icon="pi-check" round error></tw-button>
-                <tw-button prime_icon="pi-check" round color_gamma="violet"></tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" round success></tw-button>
+                    <tw-button prime_icon="pi-check" round warn></tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button prime_icon="pi-check" round error></tw-button>
+                    <tw-button prime_icon="pi-check" round color_gamma="violet"></tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -310,10 +350,14 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
         <div class="container">
             <div class="btn_ex_item">
-                <tw-button outline prime_icon="pi-download" round success></tw-button>
-                <tw-button outline prime_icon="pi-download" round warn></tw-button>
-                <tw-button outline prime_icon="pi-download" round error></tw-button>
-                <tw-button outline prime_icon="pi-download" round color_gamma="violet"></tw-button>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline prime_icon="pi-download" round success></tw-button>
+                    <tw-button outline prime_icon="pi-download" round warn></tw-button>
+                </div>
+                <div class="btn_ex_item_wrapper">
+                    <tw-button outline prime_icon="pi-download" round error></tw-button>
+                    <tw-button outline prime_icon="pi-download" round color_gamma="violet"></tw-button>
+                </div>
             </div>
             <div class="tag_wrapper">
                 <tag-one-line title="Подтвердить" tag="tw-button">
@@ -340,7 +384,3 @@ import TagOneLine from "@/reus/TagOneLine.vue";
         </div>
     </div>
 </template>
-
-<style scoped lang="scss">
-
-</style>

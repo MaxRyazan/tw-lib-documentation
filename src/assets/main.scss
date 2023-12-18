@@ -107,3 +107,11 @@ body, html {
     align-items: center;
     padding-bottom: 50px;
 }
+
+.btn_ex_item_wrapper{
+    display: flex;
+    gap: 5px;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+}
