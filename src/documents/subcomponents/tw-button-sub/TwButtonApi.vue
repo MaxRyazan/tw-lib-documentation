@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import ApiSample from "@/reus/samples/ApiSample.vue";
+
 const btnWidth = 'Длина кнопки'
 const btnHeight = 'Высота кнопки'
 const typeSucc = 'Тип кнопки - success. Цвет зеленый.'
@@ -17,7 +19,6 @@ const color_gamma = 'Возможность указать кастомный ц
 const prime_icon = 'Позволяет указать название иконки из библиотеки primeicons в формате `pi-check`'
 
 const props = [
-    ['Основные параметры:', '', '', ''],
     ['width', 'Нет', 'String', btnWidth],
     ['height', 'Нет', 'String', btnHeight],
     ['success', 'Нет', 'Boolean', typeSucc],
@@ -34,30 +35,17 @@ const props = [
     ['color_gamma', 'Нет', 'String', color_gamma],
     ['prime_icon', 'Нет', 'String', prime_icon],
 ]
+
 const emits = [
     ['@push', '-', 'Клик по кнопке левой кнопкой мыши'],
 ]
 </script>
 
 <template>
-    <div>
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
-        <tw-table-base
-                cell_min_width="100px"
-                width="800px"
-                table_bgc="white"
-                header_font_color="orange"
-                :body="props"
-                :header="['Входной параметр (props)', 'Обязательный', 'Тип значения параметра', 'Описание']"/>
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">
-            Возможные действия - Emits</p>
-        <tw-table-base
-                width="800px"
-                header_font_color="orange"
-                table_bgc="white"
-                :header="['Название', 'Аргументы', 'Описание']"
-                :body="emits"/>
-    </div>
+    <api-sample
+            :props="props"
+            :emits="emits"
+    />
 </template>
 
 <style scoped lang="scss">

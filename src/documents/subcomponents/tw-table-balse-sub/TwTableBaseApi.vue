@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import {onMounted, onUnmounted, reactive, ref} from "vue";
-import {ScreenSizes} from "@/ScreenSizes.js";
-import {getScreenSize} from "@/use/getScreenSize.js";
-import {Ref} from "vue";
 import ApiSample from "@/reus/samples/ApiSample.vue";
 
 const bodyDesc = `Массив данных который отрисовывает таблица. Тип принимаемых
@@ -66,30 +62,6 @@ const props = [
     ['multicolor', 'Нет', 'Boolean', multicolor],
     ['row_custom_settings', 'Нет', 'Array<{idx: Number, textColor: String, bgc: String, fontSize: String, fontFamily: String}>', rowCustomSettings],
 ]
-const smallProps = [
-    ['body', bodyDesc],
-    ['header', headerDesc],
-    ['td_align_left', tdAlignLeftDesc],
-    ['td_align_right', tdAlignRightDesc],
-    ['cell_padding', cellPadding],
-    ['elements_with_tabulation', elementsWithTabulation],
-    ['red_when_sub_zero', redWhenSubZero],
-    ['table_with_select', tableWithSelect],
-    ['with_fixed', withFixed],
-    ['width', widthDesc],
-    ['height', heightDesc],
-    ['cell_min_width', cellMinWidth],
-    ['table_bgc', tableBgc],
-    ['table_border', tableBorder],
-    ['header_bgc', headerBgc],
-    ['header_font_color', headerFontColor],
-    ['header_font_family', headerFontFamily],
-    ['header_font_size', headerFontSize],
-    ['cell_font_size', cellFontSize],
-    ['cell_font_color', cellFontColor],
-    ['multicolor', multicolor],
-    ['row_custom_settings', rowCustomSettings],
-]
 const rowSettings = [
     {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
     {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
@@ -103,19 +75,13 @@ const emits = [
     ['@right-click', '{bodyElement, $event}', 'Клик по строке таблицы правой кнопкой мыши']
 ]
 
-
-const header = reactive(['Входной параметр', 'Обязательный', 'Тип значения параметра', 'Описание'])
-const smallHeader = reactive(['Параметр', 'Описание'])
 </script>
 
 <template>
     <api-sample
-        :props="props"
-        :small-props="smallProps"
-        :row-settings="rowSettings"
-        :header="header"
-        :small-header="smallHeader"
-        :emits="emits"
+            :props="props"
+            :row-settings="rowSettings"
+            :emits="emits"
     />
 </template>
 
