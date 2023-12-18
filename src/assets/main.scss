@@ -79,6 +79,7 @@ body, html {
 .code {
     &__tag {
         color: #E8BF6A;
+        white-space: nowrap;
     }
     &__attrs{
         color: white;

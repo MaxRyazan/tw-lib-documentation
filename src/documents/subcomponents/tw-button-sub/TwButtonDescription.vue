@@ -1,11 +1,24 @@
-<script setup>
+<script setup lang="ts">
 
 import TagOneLine from "@/reus/TagOneLine.vue";
+import TheTag from "@/reus/TheTag.vue";
+import {onMounted, ref, Ref} from "vue";
+import {ScreenSizes} from "@/ScreenSizes.js";
+import {getScreenSize} from "@/use/getScreenSize";
+
+const screenSize: Ref<number> = ref(ScreenSizes.s1900)
+onMounted(() => {
+    screenSize.value = getScreenSize()
+    window.addEventListener('resize', () => {
+        screenSize.value = getScreenSize()
+    })
+})
 </script>
 
 <template>
     <div style="width: 100%;">
-        <p class="component__title">Компонент кнопки. Позволяет создавать как кастомные кнопки, так и использовать готовые шаблоны.</p>
+        <p class="component__title">Компонент кнопки. Позволяет создавать как кастомные кнопки, так и использовать
+            готовые шаблоны.</p>
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
@@ -18,26 +31,46 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='violet'</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -52,26 +85,50 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" color_gamma='blue'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='blue'</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -85,28 +142,53 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                     <tw-button rounded color_gamma="rgb(59, 177, 228)">Подтвердить</tw-button>
                 </div>
             </div>
+
+
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>rounded</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>rounded</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>rounded</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded color_gamma='rgb(59, 177, 228)'</span>
                     </div>
                 </tag-one-line>
-
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>rounded</span>
+                        <span>color_gamma='rgb(59, 177, 228)'</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -121,26 +203,54 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>rounded</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>rounded</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>rounded</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded color_gamma='#77008b'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='#77008b'</span>
+                        <span>rounded</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -155,26 +265,50 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='violet'</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -189,26 +323,54 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='violet'</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -223,26 +385,58 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='violet'</span>
+                        <span>rounded</span>
+                        <span>outline</span>
+                        <span>prime_icon="pi-check"</span>
+                    </div>
+                </the-tag>
 
             </div>
         </div>
@@ -258,26 +452,50 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="да" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
                     <div class="attrs_list">
                         <span>round success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="да" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>round</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
                     <div class="attrs_list">
                         <span>round warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="да" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>round</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
                     <div class="attrs_list">
                         <span>round error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="да" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>round</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
                     <div class="attrs_list">
                         <span>round color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>color_gamma='violet'</span>
+                        <span>round</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -292,26 +510,54 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="нет" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="нет" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>success</span>
+                        <span>round</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="нет" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>warn</span>
+                        <span>round</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="нет" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>error</span>
+                        <span>round</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span> color_gamma='violet'</span>
+                        <span>round</span>
+                        <span>outline</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -326,26 +572,54 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" round outline success</span>
+                        <span>prime_icon="pi-check" round success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" round outline warn</span>
+                        <span>prime_icon="pi-check"</span>
+                        <span>round</span>
+                        <span>success</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-check" round warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" round outline error</span>
+                        <span>prime_icon="pi-check"</span>
+                        <span>round</span>
+                        <span>warn</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-check" round error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" round outline color_gamma='violet'</span>
+                        <span>prime_icon="pi-check"</span>
+                        <span>round</span>
+                        <span>error</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-check" round color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-check"</span>
+                        <span>round</span>
+                        <span>color_gamma='violet'</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
         <div class="container">
@@ -360,26 +634,58 @@ import TagOneLine from "@/reus/TagOneLine.vue";
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>outline prime_icon="pi-download" round outline success</span>
+                        <span>outline prime_icon="pi-download" round success</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-download"</span>
+                        <span>round</span>
+                        <span>outline</span>
+                        <span>success</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline prime_icon="pi-download" round outline warn</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-download"</span>
+                        <span>round</span>
+                        <span>outline</span>
+                        <span>warn</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline prime_icon="pi-download" round outline error</span>
                     </div>
                 </tag-one-line>
-                <tag-one-line title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-download"</span>
+                        <span>round</span>
+                        <span>outline</span>
+                        <span>error</span>
+                    </div>
+                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline prime_icon="pi-download" round outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
+                <the-tag v-else title="Подтвердить" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>prime_icon="pi-download"</span>
+                        <span>round</span>
+                        <span>outline</span>
+                        <span>color_gamma='violet'</span>
+                    </div>
+                </the-tag>
             </div>
         </div>
     </div>
