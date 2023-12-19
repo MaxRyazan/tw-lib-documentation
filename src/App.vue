@@ -264,7 +264,7 @@ onMounted(() => {
   cursor: pointer;
   border: 1px solid $green;
   position: absolute;
-  right: 150px;
+  right: 130px;
   background-color: transparent;
   width: 50px;
   height: 22px;
