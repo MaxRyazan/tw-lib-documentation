@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import {Ref, ref, shallowRef} from "vue";
+import {onMounted, Ref, ref, shallowRef} from "vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
 import HomeComponent from '@/components/HomeComponent.vue'
 import TwButtonDoc from "@/documents/TwButtonDoc.vue";
 import TwDropdownDoc from "@/documents/TwDropdownDoc.vue";
 import TwInputDoc from "@/documents/TwInputDoc.vue";
 import {Themes} from "@/themes";
+import {setToLocalStorage} from "@/use/setToLocalStorage";
+import {getFromLocalStorage} from "@/use/getFromLocalStorage";
 
 const currentComponent = shallowRef(HomeComponent)
 const burger: Ref<HTMLElement> = ref()
-const theme: Ref<Themes> = ref(Themes.dark)
+const theme: Ref<Themes|string> = ref(Themes.dark)
 
 function toggleBurgerVisible() {
     if (burger.value) {
@@ -35,7 +37,12 @@ function changeTheme(newTheme?: Themes) {
                 break
         }
     }
+    setToLocalStorage('tw_theme', theme.value)
 }
+onMounted(() => {
+    const savedTheme: String = getFromLocalStorage('tw_theme')
+    if(savedTheme) theme.value = savedTheme
+})
 </script>
 
 <template>
