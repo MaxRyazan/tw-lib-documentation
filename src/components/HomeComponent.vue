@@ -91,8 +91,8 @@ async function copy() {
 }
 .toast {
   position: absolute;
-  right: 0;
-  top: -40px;
+  right: -140px;
+  top: 2px;
   color: rgba(255, 255, 255, .4);
   border: 1px solid rgba(255, 255, 255, .4);
   padding: 5px 10px;
