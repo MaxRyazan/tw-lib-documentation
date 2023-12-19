@@ -140,7 +140,7 @@ onMounted(() => {
     position: absolute;
     border-right: none;
     z-index: 99;
-    //background-color: rgb(36, 50, 87);
+    background-color: rgb(36, 50, 87);
     width: 120px;
     min-width: 120px;
     top: -2px;
