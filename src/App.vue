@@ -8,10 +8,13 @@ import TwInputDoc from "@/documents/TwInputDoc.vue";
 import {Themes} from "@/themes";
 import {setToLocalStorage} from "@/use/setToLocalStorage";
 import {getFromLocalStorage} from "@/use/getFromLocalStorage";
+import {getScreenSize} from "@/use/getScreenSize";
+import {ScreenSizes} from "@/ScreenSizes";
 
 const currentComponent = shallowRef(HomeComponent)
 const burger: Ref<HTMLElement> = ref()
 const theme: Ref<Themes|string> = ref(Themes.dark)
+const size = ref()
 
 function toggleBurgerVisible() {
     if (burger.value) {
@@ -42,13 +45,14 @@ function changeTheme(newTheme?: Themes) {
 onMounted(() => {
     const savedTheme: String = getFromLocalStorage('tw_theme')
     if(savedTheme) theme.value = savedTheme
+    size.value = getScreenSize()
 })
 </script>
 
 <template>
     <div class="header">
         <div class="burger_nav scss_green" @click="toggleBurgerVisible"></div>
-        <img src="./assets/img/logo.png" alt="logo">
+        <img v-if="size >= ScreenSizes.s480" src="./assets/img/logo.png" alt="logo">
 
 
         <div class="theme_changer" @click="changeTheme()">
