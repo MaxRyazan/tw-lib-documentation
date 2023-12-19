@@ -55,8 +55,12 @@ function changeTheme(newTheme?: Themes) {
             </transition>
         </div>
 
-
-        <a href="https://github.com/MaxRyazan/tw-lib-documentation" style="color: #3eaf7c;">github repo</a>
+        <a class="npm_href" href="https://www.npmjs.com/package/twins-vue">
+            <img src="./assets/img/npm.png" alt="github">
+        </a>
+        <a class="gh_href" href="https://github.com/MaxRyazan/tw-lib-documentation">
+            <img src="./assets/img/gh.png" alt="github">
+        </a>
     </div>
 
 
@@ -89,6 +93,28 @@ function changeTheme(newTheme?: Themes) {
 
 <style scoped lang="scss">
 @import "src/assets/main";
+.gh_href{
+  position: absolute;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.npm_href{
+  position: absolute;
+  right: 60px;
+  height: 26px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .main_container {
   min-height: calc(100vh - 62px);
@@ -166,11 +192,6 @@ function changeTheme(newTheme?: Themes) {
 
   & img {
     height: 100%;
-  }
-
-  & a {
-    position: absolute;
-    right: 20px;
   }
 
   & .burger_nav {
@@ -267,13 +288,13 @@ function changeTheme(newTheme?: Themes) {
                   hsl(164deg 100% 94%) 0%,
                   hsl(162deg 100% 92%) 20%,
                   hsl(159deg 100% 90%) 37%,
-                  hsl(156deg 100% 89%) 52%,
-                  hsl(152deg 100% 88%) 64%,
-                  hsl(148deg 100% 87%) 74%,
-                  hsl(143deg 100% 86%) 80%,
-                  hsl(138deg 100% 85%) 86%,
-                  hsl(132deg 100% 85%) 91%,
-                  hsl(125deg 100% 85%) 100%
+                  hsl(156deg 100% 99%) 52%,
+                  hsl(152deg 100% 98%) 64%,
+                  hsl(148deg 100% 97%) 74%,
+                  hsl(143deg 100% 96%) 80%,
+                  hsl(138deg 100% 95%) 86%,
+                  hsl(132deg 100% 95%) 91%,
+                  hsl(125deg 100% 95%) 100%
   );
 }
 .dark {
