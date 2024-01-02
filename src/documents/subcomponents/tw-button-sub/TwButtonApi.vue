@@ -22,18 +22,16 @@ const props = [
     ['width', 'Нет', 'String', btnWidth],
     ['height', 'Нет', 'String', btnHeight],
     ['success', 'Нет', 'Boolean', typeSucc],
+    ['warning', 'Нет', 'Boolean', typeWarn],
     ['error', 'Нет', 'Boolean', typeErr],
-    ['warn', 'Нет', 'Boolean', typeWarn],
     ['outline', 'Нет', 'Boolean', outline],
     ['rounded', 'Нет', 'Boolean', rounded],
     ['round', 'Нет', 'Boolean', round],
     ['disabled', 'Нет', 'Boolean', disabled],
     ['border', 'Нет', 'String', border],
     ['bgc', 'Нет', 'String', bgc],
-    ['bgcHover', 'Нет', 'String', bgcHover],
-    ['textColor', 'Нет', 'String', textColor],
-    ['color_gamma', 'Нет', 'String', color_gamma],
-    ['prime_icon', 'Нет', 'String', prime_icon],
+    ['text_color', 'Нет', 'String', textColor],
+    ['hover', 'Нет', 'String', bgcHover],
 ]
 
 const emits = [
