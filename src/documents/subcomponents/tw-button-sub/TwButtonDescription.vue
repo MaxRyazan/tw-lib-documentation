@@ -22,110 +22,101 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button success>Подтвердить</tw-button>
-                    <tw-button warn>Подтвердить</tw-button>
+                    <tw-button success>Success</tw-button>
+                    <tw-button warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button error>Подтвердить</tw-button>
-                    <tw-button color_gamma="violet">Подтвердить</tw-button>
+                    <tw-button error>Error</tw-button>
+                    <tw-button>Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
-                    <div class="attrs_list">
-                        <span>color_gamma='violet'</span>
-                    </div>
-                </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
-                    <div class="attrs_list">
-                        <span>color_gamma='violet'</span>
-                    </div>
-                </the-tag>
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Default" tag="tw-button"></tag-one-line>
+                <the-tag v-else title="Default" tag="tw-button"></the-tag>
             </div>
         </div>
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" success>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" warn>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" success>Success</tw-button>
+                    <tw-button prime_icon="pi-check" warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" error>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" color_gamma="blue">Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" error>Error</tw-button>
+                    <tw-button prime_icon="pi-check">Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" warn</span>
+                        <span>prime_icon="pi-check" warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" color_gamma='blue'</span>
+                        <span>prime_icon="pi-check"</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>color_gamma='blue'</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
@@ -134,59 +125,58 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button rounded success>Подтвердить</tw-button>
-                    <tw-button rounded warn>Подтвердить</tw-button>
+                    <tw-button rounded success>Success</tw-button>
+                    <tw-button rounded warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button rounded error>Подтвердить</tw-button>
-                    <tw-button rounded color_gamma="rgb(59, 177, 228)">Подтвердить</tw-button>
+                    <tw-button rounded error>Error</tw-button>
+                    <tw-button rounded>Default</tw-button>
                 </div>
             </div>
 
 
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>rounded</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>rounded warn</span>
+                        <span>rounded warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>rounded</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>rounded</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
-                    <div class="attrs_list">
-                        <span>rounded color_gamma='rgb(59, 177, 228)'</span>
-                    </div>
-                </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Default" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded</span>
-                        <span>color_gamma='rgb(59, 177, 228)'</span>
+                    </div>
+                </tag-one-line>
+                <the-tag v-else title="Default" tag="tw-button">
+                    <div class="attrs_list">
+                        <span>rounded</span>
                     </div>
                 </the-tag>
             </div>
@@ -194,59 +184,58 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" rounded success>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" rounded warn>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded success>Success</tw-button>
+                    <tw-button prime_icon="pi-check" rounded warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" rounded error>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" rounded color_gamma="#77008b">Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded error>Error</tw-button>
+                    <tw-button prime_icon="pi-check" rounded>Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>rounded</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" rounded warn</span>
+                        <span>prime_icon="pi-check" rounded warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>rounded</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>rounded</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" rounded color_gamma='#77008b'</span>
+                        <span>prime_icon="pi-check" rounded</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>color_gamma='#77008b'</span>
                         <span>rounded</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
@@ -256,56 +245,55 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button outline success>Подтвердить</tw-button>
-                    <tw-button outline warn>Подтвердить</tw-button>
+                    <tw-button outline success>Success</tw-button>
+                    <tw-button outline warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button outline error>Подтвердить</tw-button>
-                    <tw-button outline color_gamma="violet">Подтвердить</tw-button>
+                    <tw-button outline error>Error</tw-button>
+                    <tw-button outline>Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>outline warn</span>
+                        <span>outline warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>outline error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>outline color_gamma='violet'</span>
+                        <span>outline</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Default" tag="tw-button">
                     <div class="attrs_list">
-                        <span>color_gamma='violet'</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
@@ -314,57 +302,57 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button rounded outline success>Подтвердить</tw-button>
-                    <tw-button rounded outline warn>Подтвердить</tw-button>
+                    <tw-button rounded outline success>Success</tw-button>
+                    <tw-button rounded outline warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button rounded outline error>Подтвердить</tw-button>
-                    <tw-button rounded outline color_gamma="violet">Подтвердить</tw-button>
+                    <tw-button rounded outline error>Error</tw-button>
+                    <tw-button rounded outline>Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>rounded</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>rounded outline warn</span>
+                        <span>rounded outline warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>rounded</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>rounded</span>
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Default" tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Default" tag="tw-button">
                     <div class="attrs_list">
                         <span>color_gamma='violet'</span>
                         <span>rounded</span>
@@ -376,21 +364,21 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" rounded outline success>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" rounded outline warn>Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline success>Success</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline warning>Warning</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button prime_icon="pi-check" rounded outline error>Подтвердить</tw-button>
-                    <tw-button prime_icon="pi-check" rounded outline color_gamma="violet">Подтвердить</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline error>Error</tw-button>
+                    <tw-button prime_icon="pi-check" rounded outline>Default</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Success" tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>rounded</span>
@@ -398,25 +386,25 @@ onMounted(() => {
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" rounded outline warn</span>
+                        <span>prime_icon="pi-check" rounded outline warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Warning" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>rounded</span>
                         <span>outline</span>
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Error" tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>rounded</span>
@@ -424,12 +412,12 @@ onMounted(() => {
                         <span>prime_icon="pi-check"</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Default" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check" rounded outline color_gamma='violet'</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="Подтвердить" tag="tw-button">
+                <the-tag v-else title="Default" tag="tw-button">
                     <div class="attrs_list">
                         <span>color_gamma='violet'</span>
                         <span>rounded</span>
@@ -444,11 +432,11 @@ onMounted(() => {
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
                     <tw-button round success>да</tw-button>
-                    <tw-button round warn>да</tw-button>
+                    <tw-button round warning>да</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
                     <tw-button round error>да</tw-button>
-                    <tw-button round color_gamma="violet">да</tw-button>
+                    <tw-button round>да</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
@@ -465,12 +453,12 @@ onMounted(() => {
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
                     <div class="attrs_list">
-                        <span>round warn</span>
+                        <span>round warning</span>
                     </div>
                 </tag-one-line>
                 <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>round</span>
                     </div>
                 </the-tag>
@@ -502,11 +490,11 @@ onMounted(() => {
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
                     <tw-button outline round success>нет</tw-button>
-                    <tw-button outline round warn>нет</tw-button>
+                    <tw-button outline round warning>нет</tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
                     <tw-button outline round error>нет</tw-button>
-                    <tw-button outline round color_gamma="violet">нет</tw-button>
+                    <tw-button outline round>нет</tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
@@ -524,12 +512,12 @@ onMounted(() => {
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
                     <div class="attrs_list">
-                        <span>outline round warn</span>
+                        <span>outline round warning</span>
                     </div>
                 </tag-one-line>
                 <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>warn</span>
+                        <span>warning</span>
                         <span>round</span>
                         <span>outline</span>
                     </div>
@@ -564,11 +552,11 @@ onMounted(() => {
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
                     <tw-button prime_icon="pi-check" round success></tw-button>
-                    <tw-button prime_icon="pi-check" round warn></tw-button>
+                    <tw-button prime_icon="pi-check" round warning></tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
                     <tw-button prime_icon="pi-check" round error></tw-button>
-                    <tw-button prime_icon="pi-check" round color_gamma="violet"></tw-button>
+                    <tw-button prime_icon="pi-check" round></tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
@@ -586,14 +574,14 @@ onMounted(() => {
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>prime_icon="pi-check" round warn</span>
+                        <span>prime_icon="pi-check" round warning</span>
                     </div>
                 </tag-one-line>
                 <the-tag v-else title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
                         <span>prime_icon="pi-check"</span>
                         <span>round</span>
-                        <span>warn</span>
+                        <span>warning</span>
                     </div>
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1280" title="Подтвердить" tag="tw-button">
@@ -626,11 +614,11 @@ onMounted(() => {
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
                     <tw-button outline prime_icon="pi-download" round success></tw-button>
-                    <tw-button outline prime_icon="pi-download" round warn></tw-button>
+                    <tw-button outline prime_icon="pi-download" round warning></tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
                     <tw-button outline prime_icon="pi-download" round error></tw-button>
-                    <tw-button outline prime_icon="pi-download" round color_gamma="violet"></tw-button>
+                    <tw-button outline prime_icon="pi-download" round></tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
@@ -649,7 +637,7 @@ onMounted(() => {
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
                     <div class="attrs_list">
-                        <span>outline prime_icon="pi-download" round outline warn</span>
+                        <span>outline prime_icon="pi-download" round outline warning</span>
                     </div>
                 </tag-one-line>
                 <the-tag v-else title="Подтвердить" tag="tw-button">
@@ -657,7 +645,7 @@ onMounted(() => {
                         <span>prime_icon="pi-download"</span>
                         <span>round</span>
                         <span>outline</span>
-                        <span>warn</span>
+                        <span>warning</span>
                     </div>
                 </the-tag>
                 <tag-one-line v-if="screenSize >= ScreenSizes.s1440" title="Подтвердить" tag="tw-button">
