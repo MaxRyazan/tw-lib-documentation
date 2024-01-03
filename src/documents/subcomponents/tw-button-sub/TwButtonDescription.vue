@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import TagOneLine from "@/reus/TagOneLine.vue";
 import TheTag from "@/reus/TheTag.vue";
 import {onMounted, ref, Ref} from "vue";

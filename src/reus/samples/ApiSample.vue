@@ -10,6 +10,7 @@ let smallProps = reactive([])
 const pr = defineProps<{
     props?: Array<any>
     emits?: Array<any>
+    variables?: Array<any>
     rowSettings?: Array<RowSettings>
 }>()
 
@@ -50,5 +51,14 @@ const smallHeader = reactive(['Параметр', 'Описание'])
                 table_bgc="white"
                 :header="['Название', 'Аргументы', 'Описание']"
                 :body="emits"/>
+        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Глобальные переменные (можно переопределить в :root{})</p>
+        <tw-table-base
+                :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
+                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                header_font_color="orange"
+                table_bgc="white"
+                :header="['Название', 'Значение по умолчанию', 'Описание']"
+                :body="variables"/>
     </div>
 </template>
