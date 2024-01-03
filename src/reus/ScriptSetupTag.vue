@@ -6,7 +6,7 @@
     <div>
         <span class="code__tag">&lt;script setup&gt;</span>
             <slot />
-        <span class="code__tag">&lt;/script setup&gt;</span>
+        <span class="code__tag">&lt;/script&gt;</span>
     </div>
 </template>
 
