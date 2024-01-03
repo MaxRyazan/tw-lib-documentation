@@ -2,6 +2,19 @@
 @import 'primeicons/primeicons.css';
 $green: #01b075;
 
+::-webkit-scrollbar {
+    width: 6px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: transparent;
+    border-radius: 9em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $green;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px $green;
+}
+
+
 @font-face {
     font-family: "Droid Sans Mono";
     font-style: normal;

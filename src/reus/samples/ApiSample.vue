@@ -3,7 +3,10 @@ import {ScreenSizes} from "@/ScreenSizes.js";
 import {onMounted, reactive, ref, Ref} from "vue";
 import {getScreenSize} from "@/use/getScreenSize.js";
 import {RowSettings} from "@/types";
+import {Themes} from "@/themes";
+import {useStore} from "@/store";
 
+const store = useStore()
 const screenSize: Ref<number> = ref(ScreenSizes.s1900)
 let smallProps = reactive([])
 
@@ -30,7 +33,7 @@ const smallHeader = reactive(['Параметр', 'Описание'])
 
 <template>
     <div>
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Входные параметры - Props</p>
         <tw-table-base
                 :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
@@ -42,7 +45,7 @@ const smallHeader = reactive(['Параметр', 'Описание'])
                 :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
                 :multicolor="screenSize < ScreenSizes.s1440"
         />
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
         <tw-table-base
                 :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
@@ -51,8 +54,11 @@ const smallHeader = reactive(['Параметр', 'Описание'])
                 table_bgc="white"
                 :header="['Название', 'Аргументы', 'Описание']"
                 :body="emits"/>
-        <p style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Глобальные переменные (можно переопределить в :root{})</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}"
+           v-if="pr.variables"
+           style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Глобальные переменные (можно переопределить в :root{})</p>
         <tw-table-base
+                v-if="pr.variables"
                 :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"

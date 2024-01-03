@@ -2,12 +2,16 @@
 
 import TagOneLine from "@/reus/TagOneLine.vue";
 import TheTag from "@/reus/TheTag.vue";
+import {Themes} from "@/themes.ts";
+import {useStore} from "@/store.ts";
+
+const store = useStore()
 </script>
 
 <template>
     <div style="width: 100%;">
         <div class="component">
-            <p class="component__title">Компонент TwInput позволяет создать input с опциональными prefix и postfix строками.
+            <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="component__title">Компонент TwInput позволяет создать input с опциональными prefix и postfix строками.
                 Доступно горизонтальное и вертикальное размещение. Доступен слот для размещения информации от валидатора,
                 или любой другой.</p>
             <div class="container">

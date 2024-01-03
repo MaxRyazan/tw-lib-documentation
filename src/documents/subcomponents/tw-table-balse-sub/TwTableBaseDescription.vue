@@ -9,7 +9,9 @@ import TheArrayInCode from "@/reus/TheArrayInCode.vue";
 import {onMounted, ref} from "vue";
 import TheLongObjectInCode from "@/reus/TheLongObjectInCode.vue";
 import TheLongArrayInCode from "@/reus/TheLongArrayInCode.vue";
-
+import {Themes} from "@/themes.ts";
+import {useStore} from "@/store.ts";
+const store = useStore()
 const smallScreen = ref(false)
 
 onMounted(() => {
@@ -26,7 +28,7 @@ onMounted(() => {
 
 <template>
 <div>
-    <p class="component__title">Компонент TwTableBase - это таблица для отображения любой информации, без возможности редактирования контента. Гибкая система настроек
+    <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="component__title">Компонент TwTableBase - это таблица для отображения любой информации, без возможности редактирования контента. Гибкая система настроек
         цветов и размеров позволит создать элемент любой сложности.</p>
 
     <div class="container">

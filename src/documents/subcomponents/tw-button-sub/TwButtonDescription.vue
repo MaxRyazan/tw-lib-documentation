@@ -4,7 +4,10 @@ import TheTag from "@/reus/TheTag.vue";
 import {onMounted, ref, Ref} from "vue";
 import {ScreenSizes} from "@/ScreenSizes.js";
 import {getScreenSize} from "@/use/getScreenSize";
+import {Themes} from "@/themes";
+import {useStore} from "@/store";
 
+const store = useStore()
 const screenSize: Ref<number> = ref(ScreenSizes.s1900)
 onMounted(() => {
     screenSize.value = getScreenSize()
@@ -16,7 +19,7 @@ onMounted(() => {
 
 <template>
     <div style="width: 100%;">
-        <p class="component__title">Компонент кнопки. Позволяет создавать как кастомные кнопки, так и использовать
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="component__title">Компонент кнопки. Позволяет создавать как кастомные кнопки, так и использовать
             готовые шаблоны.</p>
         <div class="container">
             <div class="btn_ex_item">

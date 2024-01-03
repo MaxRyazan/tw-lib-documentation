@@ -69,7 +69,6 @@ onMounted(() => {
         </a>
     </div>
 
-
     <div :class="{'light': store.theme === Themes.light, 'dark': store.theme === Themes.dark}" class="main_container">
         <div class="nav" ref="burger">
             <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="nav__title">Компоненты</p>
@@ -123,7 +122,7 @@ onMounted(() => {
 }
 
 .main_container {
-  min-height: calc(100vh - 62px);
+  min-height: calc(100vh - 60px);
   min-width: 98%;
   position: relative;
   display: flex;
@@ -140,11 +139,11 @@ onMounted(() => {
     min-width: 120px;
     top: -2px;
     display: none;
-    //border-right: 2px solid $green;
+    border-right: 10px solid black;
     //border-bottom: 2px solid $green;
     padding-bottom: 20px;
   }
-  //border-right: 2px solid $green;
+  border-right: 10px solid black;
   min-width: 200px;
   width: 20%;
   position: relative;
@@ -187,11 +186,11 @@ onMounted(() => {
 }
 
 .header {
-  background-color: #121212;
+  background-color: black;
   position: relative;
   height: 60px;
   width: 100%;
-  border-bottom: 2px solid $green;
+  //border-bottom: 2px solid $green;
   display: flex;
   justify-content: center;
   align-items: center;
