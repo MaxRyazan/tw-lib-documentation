@@ -10,10 +10,11 @@ import {setToLocalStorage} from "@/use/setToLocalStorage";
 import {getFromLocalStorage} from "@/use/getFromLocalStorage";
 import {getScreenSize} from "@/use/getScreenSize";
 import {ScreenSizes} from "@/ScreenSizes";
+import {useStore} from "@/store";
 
+const store = useStore()
 const currentComponent = shallowRef(HomeComponent)
 const burger: Ref<HTMLElement> = ref()
-const theme: Ref<Themes|string> = ref(Themes.dark)
 const size = ref()
 
 function toggleBurgerVisible() {
@@ -29,22 +30,16 @@ function seeThis(clickedComponent: any) {
 }
 
 function changeTheme(newTheme?: Themes) {
-    if (newTheme) theme.value = newTheme
+    if (newTheme) store.theme = newTheme
     else {
-        switch (theme.value) {
-            case Themes.dark:
-                theme.value = Themes.light
-                break
-            case Themes.light:
-                theme.value = Themes.dark
-                break
-        }
+        if(store.theme === Themes.dark) store.theme = Themes.light
+        else store.theme = Themes.dark
     }
-    setToLocalStorage('tw_theme', theme.value)
+    setToLocalStorage('tw_theme', store.theme)
 }
 onMounted(() => {
-    const savedTheme: String = getFromLocalStorage('tw_theme')
-    if(savedTheme) theme.value = savedTheme
+    const savedTheme: any = getFromLocalStorage('tw_theme')
+    if(savedTheme) store.theme = savedTheme
     size.value = getScreenSize()
 })
 </script>
@@ -57,11 +52,11 @@ onMounted(() => {
 
         <div class="theme_changer" @click="changeTheme()">
             <transition name="fade">
-                <i style="font-size: 16px; color: burlywood; position: absolute; left: 3px;" v-if="theme === Themes.dark"
+                <i style="font-size: 16px; color: burlywood; position: absolute; left: 3px;" v-if="store.theme === Themes.dark"
                    class="pi pi-moon" @click.stop="changeTheme(Themes.light)"></i>
             </transition>
             <transition name="fade2">
-                <i style="font-size: 16px; color: yellow; position: absolute; right: 3px;" v-if="theme === Themes.light"
+                <i style="font-size: 16px; color: yellow; position: absolute; right: 3px;" v-if="store.theme === Themes.light"
                    class="pi pi-sun" @click.stop="changeTheme(Themes.dark)"></i>
             </transition>
         </div>
@@ -75,9 +70,9 @@ onMounted(() => {
     </div>
 
 
-    <div :class="{'light': theme === Themes.light, 'dark': theme === Themes.dark}" class="main_container">
+    <div :class="{'light': store.theme === Themes.light, 'dark': store.theme === Themes.dark}" class="main_container">
         <div class="nav" ref="burger">
-            <p class="nav__title">Компоненты</p>
+            <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="nav__title">Компоненты</p>
             <div class="nav__list">
                 <div @click="seeThis(HomeComponent)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === HomeComponent}">About
@@ -145,11 +140,11 @@ onMounted(() => {
     min-width: 120px;
     top: -2px;
     display: none;
-    border-right: 2px solid $green;
-    border-bottom: 2px solid $green;
+    //border-right: 2px solid $green;
+    //border-bottom: 2px solid $green;
     padding-bottom: 20px;
   }
-  border-right: 2px solid $green;
+  //border-right: 2px solid $green;
   min-width: 200px;
   width: 20%;
   position: relative;
@@ -192,7 +187,7 @@ onMounted(() => {
 }
 
 .header {
-  background-color: rgb(36, 50, 87);
+  background-color: #121212;
   position: relative;
   height: 60px;
   width: 100%;
@@ -309,6 +304,6 @@ onMounted(() => {
   );
 }
 .dark {
-  background-color: rgb(55, 65, 81);
+  background-color: #121212;
 }
 </style>

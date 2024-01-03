@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {ref} from "vue";
-
+import {useStore} from "@/store";
+import {Themes} from "@/themes";
+const store = useStore()
 const isToastVisible = ref(false)
 
 async function copy() {
@@ -17,13 +19,13 @@ async function copy() {
 
 <template>
     <div class="home_wrapper">
-        <p class="main_title">Библиотека UI компонентов для Vue3.</p>
-        <p>Ноль зависимостей.</p>
-        <p style="text-align: center">Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
-        <p style="text-align: center">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
-        <p style="text-align: center">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="main_title">Библиотека UI компонентов для Vue3.</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}">Ноль зависимостей.</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
+        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
         <div class="connect">
-            <p>Подключение в ваш проект:</p>
+            <p :class="{'dark_text_shadow': store.theme === Themes.dark}">Подключение в ваш проект:</p>
             <div class="copy">
                 <div class="toast" v-if="isToastVisible">Скопировано!</div>
                 <i class="pi pi-chevron-right"></i>
@@ -99,12 +101,13 @@ async function copy() {
   border-radius: 6px;
 }
 .connect {
+  text-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  border: 1px solid rgb(36, 50, 87);
-  background-color: rgb(36, 50, 87);
+  //border: 1px solid rgb(36, 50, 87);
+  //background-color: rgb(36, 50, 87);
   border-radius: 12px;
   width: 100%;
   padding: 30px 5px;
@@ -150,6 +153,9 @@ async function copy() {
     font-size: 20px;
     margin: 10px 0 10px 0;
   }
+}
+.sub_title{
+  text-align: center;
 }
 .home_wrapper {
   width: 100%;

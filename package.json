@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.8",
+    "pinia": "^2.1.7",
     "primeicons": "^6.0.1",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "twins-vue": "e^0.0.16"
+    "twins-vue": "^0.0.16",
+    "vue": "^3.3.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
