@@ -11,6 +11,7 @@ import TheLongObjectInCode from "@/reus/TheLongObjectInCode.vue";
 import TheLongArrayInCode from "@/reus/TheLongArrayInCode.vue";
 import {Themes} from "@/themes.ts";
 import {useStore} from "@/store.ts";
+import DarkTableBase from "@/reus/DarkTableBase.vue";
 const store = useStore()
 const smallScreen = ref(false)
 
@@ -33,34 +34,29 @@ onMounted(() => {
 
     <div class="container">
         <div class="example_container">
-            <tw-table-base v-if="!smallScreen" :header="['Parameter', 'Current value', 'Measure']"
+            <tw-table-base v-if="store.theme === Themes.light" :header="['Parameter', 'Current value', 'Measure']"
                            :body="[
                                    {a:'Mechanical properties:', b: '', measure: ''},
                                    {a:'Pressure', b:12, measure: 'atm.'},
                                    {a:'Temperature', b:-28, measure: 'f.'},
                                    {a:'Danger index', b: 3, measure: 'lvl.'}
                                ]"
-                           width="700px"
+                           :width="smallScreen ? '80%' : '700px'"
                            red_when_sub_zero
                            header_font_color="green"
                            :row_custom_settings="[
                                     {idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
                                 ]"
             ></tw-table-base>
-            <tw-table-base v-else :header="['Parameter', 'Current value', 'Measure']"
-                           :body="[
-                                   {a:'Mech. props:', b: '', measure: ''},
+            <dark-table-base v-else
+                             :width="smallScreen ? '80%' : '700px'"
+                             :header="['Parameter', 'Current value', 'Measure']"
+                             :body="[
+                                   {a:'Mechanical properties:', b: '', measure: ''},
                                    {a:'Pressure', b:12, measure: 'atm.'},
                                    {a:'Temperature', b:-28, measure: 'f.'},
                                    {a:'Danger index', b: 3, measure: 'lvl.'}
-                               ]"
-                           width="80%"
-                           red_when_sub_zero
-                           header_font_color="green"
-                           :row_custom_settings="[
-                                    {idx:0, textColor: 'darkorange', fontSize: '14px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
-                                ]"
-            ></tw-table-base>
+                               ]" />
         </div>
         <div class="tag_wrapper">
             <template-tag>

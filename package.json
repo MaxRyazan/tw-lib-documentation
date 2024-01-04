@@ -13,7 +13,7 @@
     "primeicons": "^6.0.1",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "twins-vue": "^0.0.16",
+    "twins-vue": "^0.0.20",
     "vue": "^3.3.8"
   },
   "devDependencies": {
