@@ -52,11 +52,17 @@ onMounted(() => {
                              :width="smallScreen ? '80%' : '700px'"
                              :header="['Parameter', 'Current value', 'Measure']"
                              :body="[
-                                   {a:'Mechanical properties:', b: '', measure: ''},
+                                   {a:'Mechanical properties:'},
                                    {a:'Pressure', b:12, measure: 'atm.'},
                                    {a:'Temperature', b:-28, measure: 'f.'},
-                                   {a:'Danger index', b: 3, measure: 'lvl.'}
-                               ]" />
+                                   {a:'Danger index', b: 3, measure: 'lvl.'},
+                                   {a:'Calculating properties:'},
+                                   {a:'Flow', b:324.12, measure: 't.'},
+                                   {a:'Balls weight', b:43, measure: 't.'},
+                                   {a:'Water weight', b: 28, measure: 't.'}
+                               ]"
+                             :row_custom_settings="[{idx: 0, isSubTitle: true}, {idx: 4, isSubTitle: true}]"
+            />
         </div>
         <div class="tag_wrapper">
             <template-tag>
