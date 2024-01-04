@@ -34,7 +34,22 @@ onMounted(() => {
 
     <div class="container">
         <div class="example_container">
-            <tw-table-base v-if="store.theme === Themes.light" :header="['Parameter', 'Current value', 'Measure']"
+            <dark-table-base v-if="store.theme === Themes.dark"
+                             :width="smallScreen ? '80%' : '700px'"
+                             :header="['Parameter', 'Current value', 'Measure']"
+                             :body="[
+                                   {a:'Mechanical properties:'},
+                                   {a:'Pressure', b:12, measure: 'atm.'},
+                                   {a:'Temperature', b:-28, measure: 'f.'},
+                                   {a:'Danger index', b: 3, measure: 'lvl.'},
+                                   {a:'Calculating properties:'},
+                                   {a:'Flow', b:324.12, measure: 't.'},
+                                   {a:'Balls weight', b:43, measure: 't.'},
+                                   {a:'Water weight', b: 28, measure: 't.'}
+                               ]"
+                             :row_custom_settings="[{idx: 0, isSubTitle: true, textColor: '#ffb83c'}, {idx: 4, isSubTitle: true, textColor: '#ffb83c'}]"
+            />
+            <tw-table-base v-else :header="['Parameter', 'Current value', 'Measure']"
                            :body="[
                                    {a:'Mechanical properties:', b: '', measure: ''},
                                    {a:'Pressure', b:12, measure: 'atm.'},
@@ -48,21 +63,6 @@ onMounted(() => {
                                     {idx:0, textColor: 'darkorange', fontSize: '18px', bgc: 'rgb(255, 240, 219)', fontFamily: 'cursive'},
                                 ]"
             ></tw-table-base>
-            <dark-table-base v-else
-                             :width="smallScreen ? '80%' : '700px'"
-                             :header="['Parameter', 'Current value', 'Measure']"
-                             :body="[
-                                   {a:'Mechanical properties:'},
-                                   {a:'Pressure', b:12, measure: 'atm.'},
-                                   {a:'Temperature', b:-28, measure: 'f.'},
-                                   {a:'Danger index', b: 3, measure: 'lvl.'},
-                                   {a:'Calculating properties:'},
-                                   {a:'Flow', b:324.12, measure: 't.'},
-                                   {a:'Balls weight', b:43, measure: 't.'},
-                                   {a:'Water weight', b: 28, measure: 't.'}
-                               ]"
-                             :row_custom_settings="[{idx: 0, isSubTitle: true}, {idx: 4, isSubTitle: true}]"
-            />
         </div>
         <div class="tag_wrapper">
             <template-tag>

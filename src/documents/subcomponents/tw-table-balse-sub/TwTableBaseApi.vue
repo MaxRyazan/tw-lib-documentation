@@ -35,19 +35,19 @@ idx - номер строки, textColor - цвет текста в строке
 
 
 const props = [
-    ['Основные параметры:', '', '', ''],
+    ['Основные параметры:'],
     ['body', 'Да', 'Array<Object> || Array<Array>', bodyDesc],
     ['header', 'Нет', 'Array<any> || Object', headerDesc],
-    ['Позиционирование в ячейке:', '', '', ''],
+    ['Позиционирование в ячейке:'],
     ['td_align_left', 'Нет', 'Boolean', tdAlignLeftDesc],
     ['td_align_right', 'Нет', 'Boolean', tdAlignRightDesc],
     ['cell_padding', 'Нет', 'String', cellPadding],
     ['elements_with_tabulation', 'Нет', 'Array<Array>', elementsWithTabulation],
-    ['Дополнительные возможности:', '', '', ''],
+    ['Дополнительные возможности:'],
     ['red_when_sub_zero', 'Нет', 'Boolean', redWhenSubZero],
     ['table_with_select', 'Нет', 'Boolean', tableWithSelect],
     ['with_fixed', 'Нет', 'Number', withFixed],
-    ['Размеры и цветовая гамма:', '', '', ''],
+    ['Размеры и цветовая гамма:'],
     ['width', 'Нет', 'String', widthDesc],
     ['height', 'Нет', 'String', heightDesc],
     ['cell_min_width', 'Нет', 'String', cellMinWidth],
@@ -63,10 +63,10 @@ const props = [
     ['row_custom_settings', 'Нет', 'Array<{idx: Number, textColor: String, bgc: String, fontSize: String, fontFamily: String}>', rowCustomSettings],
 ]
 const rowSettings = [
-    {idx:0, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-    {idx:3, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-    {idx:8, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
-    {idx:12, textColor: 'darkorange', fontSize: '1.5vw', bgc: 'rgb(255, 240, 219)'},
+    {idx:0, fontSize: '1.5vw', textColor: '#ffb83c', isSubTitle: true},
+    {idx:3, fontSize: '1.5vw', textColor: '#ffb83c', isSubTitle: true},
+    {idx:8,  fontSize: '1.5vw', textColor: '#ffb83c', isSubTitle: true},
+    {idx:12, fontSize: '1.5vw', textColor: '#ffb83c', isSubTitle: true},
 ]
 
 const emits = [

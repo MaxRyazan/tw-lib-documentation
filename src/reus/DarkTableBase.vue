@@ -1,11 +1,22 @@
 <script setup lang="ts">
+import {ScreenSizes} from "@/ScreenSizes";
+import {onMounted, ref, Ref} from "vue";
+import {getScreenSize} from "@/use/getScreenSize";
+
 defineProps<{
-    header: Array<string>,
+    header: Array<any>,
     body: Array<any>,
     width?: string,
     row_custom_settings?: Array<any>
 
 }>()
+const screenSize: Ref<number> = ref(ScreenSizes.s1900)
+onMounted(() => {
+    screenSize.value = getScreenSize()
+    window.addEventListener('resize', () => {
+        screenSize.value = getScreenSize()
+    })
+})
 </script>
 
 <template>

@@ -11,6 +11,7 @@ import {getFromLocalStorage} from "@/use/getFromLocalStorage";
 import {getScreenSize} from "@/use/getScreenSize";
 import {ScreenSizes} from "@/ScreenSizes";
 import {useStore} from "@/store";
+import db from './../package.json'
 
 const store = useStore()
 const currentComponent = shallowRef(HomeComponent)
@@ -48,7 +49,6 @@ onMounted(() => {
     <div class="header">
         <div class="burger_nav scss_green" @click="toggleBurgerVisible"></div>
         <img v-if="size >= ScreenSizes.s480" src="./assets/img/logo.png" alt="logo">
-
 
         <div class="theme_changer" @click="changeTheme()">
             <transition name="fade">
@@ -91,6 +91,10 @@ onMounted(() => {
             </div>
         </div>
         <div class="wrapper_main">
+            <div style="font-size: 0.75rem;"
+                 :style="{color: store.theme === Themes.dark ? 'white' : 'black'}"
+                 class="current_version"
+            >{{db.dependencies["twins-vue"].replace('^', 'v.')}}</div>
             <component :is="currentComponent"/>
         </div>
     </div>
@@ -98,6 +102,11 @@ onMounted(() => {
 
 <style scoped lang="scss">
 @import "src/assets/main";
+.current_version{
+  position: absolute;
+  top: 5px;
+  right: 25px;
+}
 .gh_href{
   position: absolute;
   right: 20px;
