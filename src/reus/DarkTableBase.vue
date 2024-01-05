@@ -33,3 +33,7 @@ onMounted(() => {
         :row_custom_settings="row_custom_settings"
 />
 </template>
+[
+{idx: 0, isSubTitle: true, textColor: '#ffb83c'},
+{idx: 4, isSubTitle: true, textColor: '#ffb83c'}
+]
