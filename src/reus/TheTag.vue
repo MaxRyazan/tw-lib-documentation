@@ -12,7 +12,9 @@ defineProps<{ tag: string, title: string }>()
                 <span class="code__attrs">
                     <slot/>
                     <span class="code__tag">&gt;
-                        <span v-if="title" class="code__title">{{ title }}</span>&lt;/{{ tag }}&gt;
+                        <span v-if="title" class="code__title">{{ title }}</span>
+                        <slot name="innerTag" />
+                        &lt;/{{ tag }}&gt;
                     </span>
                 </span>
             </div>
