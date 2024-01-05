@@ -49,6 +49,7 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
 
         <dark-table-base
                 v-if="store.theme === Themes.dark"
+                header_padding="14px"
                 :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
@@ -59,6 +60,7 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
         />
         <tw-table-base
                 v-else
+                header_padding="14px"
                 :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"

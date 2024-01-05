@@ -31,7 +31,13 @@ const cellFontColor = `Цвет текста в ячейках таблицы`
 const cellMinWidth = `Минимальная ширина ячейки таблицы`
 const multicolor = `Двойная заливка для таблицы. Четные строки имеют другой оттенок, чем нечетные`
 const rowCustomSettings = `Массив настроек строки, позволяющий поменять стили конкретной строки в таблице.
-idx - номер строки, textColor - цвет текста в строке, fontSize - размер текста в строке, fontFamily - название шрифта в строке, bgc - цвет заливки этой строки.`
+idx - номер строки,
+isSubTitle - булево значение, объединяющее все колонки таблицы в данной строке в одну,
+textColor - цвет текста в строке,
+fontSize - размер текста в строке,
+fontFamily - название шрифта в строке,
+bgc - цвет заливки этой строки,
+textAlign - позиционирование текста в строке`
 
 
 const props = [
@@ -44,23 +50,31 @@ const props = [
     ['cell_padding', 'Нет', 'String', cellPadding],
     ['elements_with_tabulation', 'Нет', 'Array<Array>', elementsWithTabulation],
     ['Дополнительные возможности:'],
+
+
+
     ['red_when_sub_zero', 'Нет', 'Boolean', redWhenSubZero],
     ['table_with_select', 'Нет', 'Boolean', tableWithSelect],
     ['with_fixed', 'Нет', 'Number', withFixed],
     ['Размеры и цветовая гамма:'],
+
+
     ['width', 'Нет', 'String', widthDesc],
     ['height', 'Нет', 'String', heightDesc],
-    ['cell_min_width', 'Нет', 'String', cellMinWidth],
-    ['table_bgc', 'Нет', 'String', tableBgc],
-    ['table_border', 'Нет', 'String', tableBorder],
     ['header_bgc', 'Нет', 'String', headerBgc],
     ['header_font_color', 'Нет', 'String', headerFontColor],
-    ['header_font_family', 'Нет', 'String', headerFontFamily],
     ['header_font_size', 'Нет', 'String', headerFontSize],
     ['cell_font_size', 'Нет', 'String', cellFontSize],
     ['cell_font_color', 'Нет', 'String', cellFontColor],
+    ['table_bgc', 'Нет', 'String', tableBgc],
+    ['cell_min_width', 'Нет', 'String', cellMinWidth],
     ['multicolor', 'Нет', 'Boolean', multicolor],
-    ['row_custom_settings', 'Нет', 'Array<{idx: Number, textColor: String, bgc: String, fontSize: String, fontFamily: String}>', rowCustomSettings],
+    ['row_custom_settings', 'Нет', 'Array<{idx: Number, isSubTitle: Boolean, textColor: String, bgc: String, fontSize: String, fontFamily: String, textAlign: String}>', rowCustomSettings],
+    ['header_padding', 'Нет', 'String', 'Значение padding в заголовке таблицы.'],
+    ['table_border', 'Нет', 'String', tableBorder],
+    ['header_font_family', 'Нет', 'String', headerFontFamily],
+    ['header_border_bottom', 'Нет', 'String', 'Значение border bottom в заголовке таблицы.'],
+
 ]
 const rowSettings = [
     {idx:0, fontSize: '1.5vw', textColor: '#ffb83c', isSubTitle: true},

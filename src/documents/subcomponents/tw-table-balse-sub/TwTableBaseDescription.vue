@@ -90,13 +90,13 @@ onMounted(() => {
                             :body="<span class="code__tag">body</span>"
                         </span>
                         <span style="display: flex">
-                            row_custom_settings="<span class="code__tag">rowsSettings</span>"
+                            row_custom_settings="<span class="code__tag">settings</span>"
                         </span>
                     </div>
                 </the-tag>
             </template-tag>
             <script-setup-tag>
-                <reactive-variable dataType="array" var-name="rowsSettings">
+                <reactive-variable dataType="array" var-name="settings">
                     <the-long-object-in-code v-if="smallScreen"  :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />
                     <the-long-object-in-code v-if="smallScreen"  :object="{idx: 4, isSubTitle: true, textColor: '#ffb83c'}" />
                     <the-object-in-code v-if="!smallScreen" :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />

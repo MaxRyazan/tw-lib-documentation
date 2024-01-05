@@ -143,14 +143,13 @@ onMounted(() => {
     position: absolute;
     border-right: none;
     z-index: 99;
-    //background-color: rgb(36, 50, 87);
     width: 120px;
     min-width: 120px;
     top: -2px;
     display: none;
     border-right: 10px solid black;
-    //border-bottom: 2px solid $green;
     padding-bottom: 20px;
+    border-right: none;
   }
   border-right: 10px solid black;
   min-width: 200px;
@@ -199,7 +198,6 @@ onMounted(() => {
   position: relative;
   height: 60px;
   width: 100%;
-  //border-bottom: 2px solid $green;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,6 +263,8 @@ onMounted(() => {
 
 .show {
   display: block !important;
+  z-index: 999;
+  background-color: black;
 }
 
 .theme_changer {
