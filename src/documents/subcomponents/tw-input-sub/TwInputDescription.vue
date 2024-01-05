@@ -16,7 +16,7 @@ const store = useStore()
                 или любой другой.</p>
             <div class="container">
                 <div class="example_container">
-                    <tw-input />
+                    <tw-input border="1px solid white"/>
                 </div>
 
                 <div class="tag_wrapper">
