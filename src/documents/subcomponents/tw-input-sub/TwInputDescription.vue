@@ -16,7 +16,7 @@ const store = useStore()
                 или любой другой.</p>
             <div class="container">
                 <div class="example_container">
-                    <tw-input border="1px solid white"/>
+                    <tw-input style="margin-left: 8%;" />
                 </div>
 
                 <div class="tag_wrapper">
@@ -41,7 +41,7 @@ const store = useStore()
             </div>
             <div class="container">
                 <div class="example_container">
-                    <tw-input type="number" height="22px" rounded width="260px" inputWidth="80px" prefix="Enter you weight:"
+                    <tw-input type="number" height="22px" text_center border_radius="12px" width="260px" input_width="80px" prefix="Enter you weight:"
                               postfix="kg" prefix_color="orange" postfix_color="orange"/>
                 </div>
 
@@ -50,12 +50,13 @@ const store = useStore()
                         <div class="attrs_list">
                             <span>v-model="weight"</span>
                             <span>width="260px"</span>
-                            <span>inputWidth="40px"</span>
-                            <span>postfix_color="orange"</span>
-                            <span>prefix_color="orange"</span>
+                            <span>input_width="40px"</span>
                             <span>prefix="Enter you weight:"</span>
+                            <span>prefix_color="orange"</span>
                             <span>postfix='kg'</span>
-                            <span>rounded</span>
+                            <span>postfix_color="orange"</span>
+                            <span>border_radius="12px"</span>
+                            <span>text_center</span>
                             <span>height="22px"</span>
                             <span>type="number"</span>
                         </div>
@@ -64,8 +65,8 @@ const store = useStore()
             </div>
             <div class="container">
                 <div class="example_container">
-                    <tw-input vertical prefix="User name:" prefix_color="orange" bgc="transparent" bbColor="orange"
-                              caretColor="white" inputTextCenter input_color="white"/>
+                    <tw-input style="margin-bottom: 20px;" vertical prefix="User name:" prefix_color="orange" bgc="transparent" border="none" border_bottom="1px solid orange"
+                              caret_color="white" text_center input_text_color="white"/>
                 </div>
 
                 <div class="tag_wrapper">
@@ -76,10 +77,11 @@ const store = useStore()
                             <span>prefix="User name:"</span>
                             <span>prefix_color="orange"</span>
                             <span>bgc="transparent"</span>
-                            <span>bbColor="orange"</span>
-                            <span>caretColor="white"</span>
-                            <span>inputTextCenter</span>
-                            <span>input_color="white"</span>
+                            <span>border="none"</span>
+                            <span>border_bottom="1px solid orange"</span>
+                            <span>caret_color="white"</span>
+                            <span>text_center</span>
+                            <span>input_text_color="white"</span>
                         </div>
                     </the-tag>
                 </div>
