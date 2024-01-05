@@ -193,7 +193,12 @@ onMounted(() => {
                 </div>
                 <div class="btn_ex_item_wrapper">
                     <tw-button rounded outline error>Error</tw-button>
-                    <tw-button rounded outline hover="lightblue">Custom</tw-button>
+                    <tw-button rounded outline border="1px solid #029cde" text_color="#029cde" hover="black">
+                        <div style="display: flex; gap: 10px">
+                            <span>Download</span>
+                            <i class="pi pi-download"/>
+                        </div>
+                    </tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
@@ -233,33 +238,54 @@ onMounted(() => {
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1150" title="Default" tag="tw-button">
-                    <div class="attrs_list">
-                        <span>rounded outline hover="lightblue"</span>
-                    </div>
-                </tag-one-line>
-                <the-tag v-else title="Default" tag="tw-button">
+                <the-tag   title='' tag="tw-button">
                     <div class="attrs_list">
                         <span>rounded</span>
                         <span>outline</span>
-                        <span>hover="lightblue"</span>
+                        <span>hover="black"</span>
+                        <span>border="1px solid #029cde"</span>
+                        <span>text_color="#029cde"</span>
                     </div>
+                    <template #innerTag>
+                        <the-tag style="margin-left: 10px" title="" tag="div">
+                            <div class="attrs_list">
+                                <span>style="display: flex; gap: 10px"</span>
+                            </div>
+                            <template #innerTag>
+                                <the-tag style="margin-left: 10px;" title="Download" tag="span"></the-tag>
+                                <tag-one-line style="margin-left: 10px;" title='' tag="i">
+                                    <div class="attrs_list">
+                                        <span>class="pi pi-download"</span>
+                                    </div>
+                                </tag-one-line>
+                            </template>
+                        </the-tag>
+                    </template>
                 </the-tag>
+
             </div>
         </div>
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button round success>да</tw-button>
-                    <tw-button round warning>да</tw-button>
+                    <tw-button round success>
+                        <i class="pi pi-download" />
+                    </tw-button>
+                    <tw-button round warning>
+                        <i class="pi pi-download" />
+                    </tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button round error>да</tw-button>
-                    <tw-button round>да</tw-button>
+                    <tw-button round error>
+                        <i class="pi pi-download" />
+                    </tw-button>
+                    <tw-button round>
+                        <i class="pi pi-download" />
+                    </tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round success</span>
                     </div>
@@ -270,7 +296,7 @@ onMounted(() => {
                         <span>round</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round warning</span>
                     </div>
@@ -281,7 +307,7 @@ onMounted(() => {
                         <span>round</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round error</span>
                     </div>
@@ -292,7 +318,7 @@ onMounted(() => {
                         <span>round</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="да" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round</span>
                     </div>
@@ -307,16 +333,24 @@ onMounted(() => {
         <div class="container">
             <div class="btn_ex_item">
                 <div class="btn_ex_item_wrapper">
-                    <tw-button outline round success>нет</tw-button>
-                    <tw-button outline round warning>нет</tw-button>
+                    <tw-button outline round success>
+                        <i class="pi pi-check"/>
+                    </tw-button>
+                    <tw-button outline round warning>
+                        <i class="pi pi-check"/>
+                    </tw-button>
                 </div>
                 <div class="btn_ex_item_wrapper">
-                    <tw-button outline round error>нет</tw-button>
-                    <tw-button outline round bgc="violet">нет</tw-button>
+                    <tw-button outline round error>
+                         <i class="pi pi-check"/>
+                    </tw-button>
+                    <tw-button outline round bgc="violet">
+                         <i class="pi pi-check"/>
+                    </tw-button>
                 </div>
             </div>
             <div class="tag_wrapper">
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round success</span>
                     </div>
@@ -328,7 +362,7 @@ onMounted(() => {
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round warning</span>
                     </div>
@@ -340,7 +374,7 @@ onMounted(() => {
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round error</span>
                     </div>
@@ -352,7 +386,7 @@ onMounted(() => {
                         <span>outline</span>
                     </div>
                 </the-tag>
-                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title="нет" tag="tw-button">
+                <tag-one-line v-if="screenSize >= ScreenSizes.s1024" title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>outline round bgc="violet"</span>
                     </div>
