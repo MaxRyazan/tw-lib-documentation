@@ -290,7 +290,7 @@ onMounted(() => {
                         <span>round success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="да" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>round</span>
@@ -301,7 +301,7 @@ onMounted(() => {
                         <span>round warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="да" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>warning</span>
                         <span>round</span>
@@ -312,7 +312,7 @@ onMounted(() => {
                         <span>round error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="да" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>round</span>
@@ -323,7 +323,7 @@ onMounted(() => {
                         <span>round</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="да" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-download"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round</span>
                     </div>
@@ -355,7 +355,7 @@ onMounted(() => {
                         <span>outline round success</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="нет" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>success</span>
                         <span>round</span>
@@ -367,7 +367,7 @@ onMounted(() => {
                         <span>outline round warning</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="нет" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>warning</span>
                         <span>round</span>
@@ -379,7 +379,7 @@ onMounted(() => {
                         <span>outline round error</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="нет" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>error</span>
                         <span>round</span>
@@ -391,7 +391,7 @@ onMounted(() => {
                         <span>outline round bgc="violet"</span>
                     </div>
                 </tag-one-line>
-                <the-tag v-else title="нет" tag="tw-button">
+                <the-tag v-else title='<i class="pi pi-check"/>' tag="tw-button">
                     <div class="attrs_list">
                         <span>round</span>
                         <span>outline</span>
