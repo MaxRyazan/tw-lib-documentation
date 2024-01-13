@@ -58,6 +58,7 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_nav_border_radius', '0px');
         document.documentElement.style.setProperty('--s_text_shadow', '1px 0 10px #01b075');
         document.documentElement.style.setProperty('--s_nav_item_color', 'orange');
+        document.documentElement.style.setProperty('--s_nav_title_color', '#01b075');
     } else {
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
         document.documentElement.style.setProperty('--s_header', '#EEEEEE');
@@ -72,6 +73,7 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_nav_border_radius', '20px');
         document.documentElement.style.setProperty('--s_text_shadow', 'none');
         document.documentElement.style.setProperty('--s_nav_item_color', '#1F2937');
+        document.documentElement.style.setProperty('--s_nav_title_color', '#1F2937');
     }
 })
 </script>
@@ -195,7 +197,7 @@ watch(computed(() => store.theme), (value) => {
     border-right: none;
   }
   &__title {
-    color: $green;
+    color: var(--s_nav_title_color);
     text-align: center;
     font-size: 22px;
     padding: 25px 5px;
