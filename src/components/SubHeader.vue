@@ -34,9 +34,15 @@ function clickOnSubtitle(subtitle: string){
 
 <template>
 <div class="sub_nav">
-    <span @click="clickOnSubtitle('Описание')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Описание', 'dark_text_shadow': store.theme === Themes.dark}">Описание</span>
-    <span @click="clickOnSubtitle('Api')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Api', 'dark_text_shadow': store.theme === Themes.dark}">Api</span>
-    <span @click="clickOnSubtitle('Слоты')" class="sub_nav_item" :class="{'active': currentSubTitle === 'Слоты', 'dark_text_shadow': store.theme === Themes.dark}">Слоты</span>
+    <span @click="clickOnSubtitle('Описание')"
+          class="sub_nav_item"
+          :class="{'active': currentSubTitle === 'Описание', 'dark_text_shadow': store.theme === Themes.dark}">Описание</span>
+    <span @click="clickOnSubtitle('Api')"
+          class="sub_nav_item"
+          :class="{'active': currentSubTitle === 'Api', 'dark_text_shadow': store.theme === Themes.dark}">Api</span>
+    <span @click="clickOnSubtitle('Слоты')"
+          class="sub_nav_item"
+          :class="{'active': currentSubTitle === 'Слоты', 'dark_text_shadow': store.theme === Themes.dark}">Слоты</span>
 </div>
 </template>
 

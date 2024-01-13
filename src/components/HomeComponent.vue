@@ -19,11 +19,11 @@ async function copy() {
 
 <template>
     <div class="home_wrapper">
-        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="main_title">Библиотека UI компонентов для Vue3.</p>
-        <p :class="{'dark_text_shadow': store.theme === Themes.dark}">Ноль зависимостей.</p>
-        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
-        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
-        <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="sub_title">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
+        <p class="main_title">Библиотека UI компонентов для Vue3.</p>
+        <p>Ноль зависимостей.</p>
+        <p class="sub_title">Все компоненты устанавливаются глобально, нет нужды импортировать их.</p>
+        <p class="sub_title">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
+        <p class="sub_title">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
         <div class="connect">
             <p :class="{'dark_text_shadow': store.theme === Themes.dark}">Подключение в ваш проект:</p>
             <div class="copy">
@@ -156,6 +156,7 @@ async function copy() {
 }
 .sub_title{
   text-align: center;
+  text-shadow: 1px 0 10px $green;
 }
 .home_wrapper {
   width: 100%;
@@ -165,6 +166,9 @@ async function copy() {
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  & p {
+    text-shadow: var(--s_text_shadow);
+  }
   @media (max-width: 540px) {
     gap: 5px;
   }

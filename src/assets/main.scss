@@ -9,8 +9,14 @@ $green: #01b075;
     --s_header_bb: black;
     --s_nav_br: 10px solid black;
     --s_nav_mt: 0px;
+    --s_nav_mb: 0px;
+    --s_nav_ml: 0px;
+    --s_nav_bgc: #121212;
+    --s_nav_border_radius: 0px;
+    --s_nav_item_color: orange;
     --s_theme_changer_bgc: transparent;
     --s_theme_changer_color: burlywood;
+    --s_text_shadow: 1px 0 10px #01b075;
 }
 
 
@@ -144,7 +150,4 @@ body, html {
     @media (max-width: 800px) {
         flex-direction: column;
     }
-}
-.dark_text_shadow {
-    text-shadow: $green 1px 0 10px;
 }

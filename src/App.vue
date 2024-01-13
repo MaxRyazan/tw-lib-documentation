@@ -50,16 +50,28 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_header_bb', 'black');
         document.documentElement.style.setProperty('--s_nav_br', '10px solid black');
         document.documentElement.style.setProperty('--s_nav_mt', '0px');
+        document.documentElement.style.setProperty('--s_nav_mb', '0px');
+        document.documentElement.style.setProperty('--s_nav_ml', '0px');
         document.documentElement.style.setProperty('--s_theme_changer_bgc', 'transparent');
         document.documentElement.style.setProperty('--s_theme_changer_color', 'burlywood');
+        document.documentElement.style.setProperty('--s_nav_bgc', '#121212');
+        document.documentElement.style.setProperty('--s_nav_border_radius', '0px');
+        document.documentElement.style.setProperty('--s_text_shadow', '1px 0 10px #01b075');
+        document.documentElement.style.setProperty('--s_nav_item_color', 'orange');
     } else {
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
         document.documentElement.style.setProperty('--s_header', '#EEEEEE');
         document.documentElement.style.setProperty('--s_header_bb', '#01b075');
         document.documentElement.style.setProperty('--s_nav_br', 'none');
         document.documentElement.style.setProperty('--s_nav_mt', '20px');
+        document.documentElement.style.setProperty('--s_nav_mb', '20px');
+        document.documentElement.style.setProperty('--s_nav_ml', '20px');
         document.documentElement.style.setProperty('--s_theme_changer_bgc', 'white');
         document.documentElement.style.setProperty('--s_theme_changer_color', 'orange');
+        document.documentElement.style.setProperty('--s_nav_bgc', 'white');
+        document.documentElement.style.setProperty('--s_nav_border_radius', '20px');
+        document.documentElement.style.setProperty('--s_text_shadow', 'none');
+        document.documentElement.style.setProperty('--s_nav_item_color', '#1F2937');
     }
 })
 </script>
@@ -83,16 +95,16 @@ watch(computed(() => store.theme), (value) => {
         </div>
 
         <a class="npm_href" href="https://www.npmjs.com/package/twins-vue">
-            <img src="./assets/img/npm.png" alt="github">
+            <img src="./assets/img/npm.png" alt="npm link">
         </a>
         <a class="gh_href" href="https://github.com/MaxRyazan/tw-lib-documentation">
-            <img src="./assets/img/gh.png" alt="github">
+            <img src="./assets/img/gh.png" alt="github link">
         </a>
     </div>
 
     <div class="main_container">
-        <div class="nav" ref="burger">
-            <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="nav__title">Компоненты</p>
+        <div :style="{boxShadow: store.theme === Themes.light ? '-2px 2px 16px 0px rgba(1,176,117, .2)' : 'none' }" class="nav" ref="burger">
+            <p class="nav__title">Компоненты</p>
             <div class="nav__list">
                 <div @click="seeThis(HomeComponent)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === HomeComponent}">About
@@ -161,6 +173,15 @@ watch(computed(() => store.theme), (value) => {
 }
 
 .nav {
+  border-right: var(--s_nav_br);
+  min-width: 200px;
+  width: 20%;
+  position: relative;
+  margin-top: var(--s_nav_mt);
+  margin-bottom: var(--s_nav_mb);
+  margin-left: var(--s_nav_ml);
+  background-color: var(--s_nav_bgc);
+  border-radius: var(--s_nav_border_radius);
   @media(max-width: 640px) {
     position: absolute;
     border-right: none;
@@ -173,17 +194,13 @@ watch(computed(() => store.theme), (value) => {
     padding-bottom: 20px;
     border-right: none;
   }
-  border-right: var(--s_nav_br);
-  min-width: 200px;
-  width: 20%;
-  position: relative;
-  margin-top: var(--s_nav_mt);
   &__title {
     color: $green;
     text-align: center;
     font-size: 22px;
     padding: 25px 5px;
     cursor: default;
+    text-shadow: var(--s_text_shadow);
     @media (max-width: 640px) {
       display: none;
     }
@@ -196,9 +213,12 @@ watch(computed(() => store.theme), (value) => {
     flex-direction: column;
 
     &_item {
-      color: orange;
+      color: var(--s_nav_item_color);
       cursor: pointer;
       display: inline-block;
+      padding: 5px 5px;
+      border-left: 1px solid rgba(1,176,117, .2);
+      transition: border-left-color 0.3s linear;
       @media (max-width: 640px) {
         padding: 10px 5px;
       }
@@ -208,8 +228,7 @@ watch(computed(() => store.theme), (value) => {
 
       &:hover {
         transition: .5s;
-        color: $green;
-        border-bottom: 1px solid $green;
+        border-left: 1px solid $green;
       }
     }
   }
@@ -249,6 +268,7 @@ watch(computed(() => store.theme), (value) => {
 
 .tw_active {
   color: $green;
+  border-left: 1px solid $green;
 }
 
 .burger_nav {
