@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import {Themes} from "@/themes";
-import {useStore} from "@/store";
 
-const store = useStore()
 const emit = defineEmits<{
     (e: 'showDescription'):void
     (e: 'showApi'):void
@@ -36,13 +33,13 @@ function clickOnSubtitle(subtitle: string){
 <div class="sub_nav">
     <span @click="clickOnSubtitle('Описание')"
           class="sub_nav_item"
-          :class="{'active': currentSubTitle === 'Описание', 'dark_text_shadow': store.theme === Themes.dark}">Описание</span>
+          :class="{'active': currentSubTitle === 'Описание'}">Описание</span>
     <span @click="clickOnSubtitle('Api')"
           class="sub_nav_item"
-          :class="{'active': currentSubTitle === 'Api', 'dark_text_shadow': store.theme === Themes.dark}">Api</span>
+          :class="{'active': currentSubTitle === 'Api'}">Api</span>
     <span @click="clickOnSubtitle('Слоты')"
           class="sub_nav_item"
-          :class="{'active': currentSubTitle === 'Слоты', 'dark_text_shadow': store.theme === Themes.dark}">Слоты</span>
+          :class="{'active': currentSubTitle === 'Слоты'}">Слоты</span>
 </div>
 </template>
 
@@ -52,17 +49,19 @@ function clickOnSubtitle(subtitle: string){
   display: flex;
   gap: 100px;
   text-transform: uppercase;
-  color: $green;
+  color: var(--sub_header_color);
   @media (max-width: 480px){
     gap: 50px;
   }
 }
 .active {
-  color: orange;
-  border-bottom: 1px solid orange;
+  color: var(--s_sub_header_active_color);
+  border-bottom: 1px solid var(--s_sub_header_active_color);
+  text-shadow: none !important;
 }
 .sub_nav_item{
   cursor: pointer;
   padding: 5px;
+  text-shadow: var(--s_text_shadow);
 }
 </style>
