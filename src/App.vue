@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, Ref, ref, shallowRef} from "vue";
+import {computed, onMounted, Ref, ref, shallowRef, watch} from "vue";
 import TwTableBaseDoc from "@/documents/TwTableBaseDoc.vue";
 import HomeComponent from '@/components/HomeComponent.vue'
 import TwButtonDoc from "@/documents/TwButtonDoc.vue";
@@ -43,6 +43,25 @@ onMounted(() => {
     if(savedTheme) store.theme = savedTheme
     size.value = getScreenSize()
 })
+watch(computed(() => store.theme), (value) => {
+    if(value === Themes.dark) {
+        document.documentElement.style.setProperty('--s_bgc_main', '#121212');
+        document.documentElement.style.setProperty('--s_header', 'black');
+        document.documentElement.style.setProperty('--s_header_bb', 'black');
+        document.documentElement.style.setProperty('--s_nav_br', '10px solid black');
+        document.documentElement.style.setProperty('--s_nav_mt', '0px');
+        document.documentElement.style.setProperty('--s_theme_changer_bgc', 'transparent');
+        document.documentElement.style.setProperty('--s_theme_changer_color', 'burlywood');
+    } else {
+        document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
+        document.documentElement.style.setProperty('--s_header', '#EEEEEE');
+        document.documentElement.style.setProperty('--s_header_bb', '#01b075');
+        document.documentElement.style.setProperty('--s_nav_br', 'none');
+        document.documentElement.style.setProperty('--s_nav_mt', '20px');
+        document.documentElement.style.setProperty('--s_theme_changer_bgc', 'white');
+        document.documentElement.style.setProperty('--s_theme_changer_color', 'orange');
+    }
+})
 </script>
 
 <template>
@@ -52,11 +71,13 @@ onMounted(() => {
 
         <div class="theme_changer" @click="changeTheme()">
             <transition name="fade">
-                <i style="font-size: 16px; color: burlywood; position: absolute; left: 3px;" v-if="store.theme === Themes.dark"
+                <i v-if="store.theme === Themes.dark"
+                   style="left: 3px"
                    class="pi pi-moon" @click.stop="changeTheme(Themes.light)"></i>
             </transition>
             <transition name="fade2">
-                <i style="font-size: 16px; color: yellow; position: absolute; right: 3px;" v-if="store.theme === Themes.light"
+                <i v-if="store.theme === Themes.light"
+                   style="right: 3px"
                    class="pi pi-sun" @click.stop="changeTheme(Themes.dark)"></i>
             </transition>
         </div>
@@ -69,7 +90,7 @@ onMounted(() => {
         </a>
     </div>
 
-    <div :class="{'light': store.theme === Themes.light, 'dark': store.theme === Themes.dark}" class="main_container">
+    <div class="main_container">
         <div class="nav" ref="burger">
             <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="nav__title">Компоненты</p>
             <div class="nav__list">
@@ -136,6 +157,7 @@ onMounted(() => {
   position: relative;
   display: flex;
   gap: 5px;
+  background-color: var(--s_bgc_main);
 }
 
 .nav {
@@ -151,11 +173,11 @@ onMounted(() => {
     padding-bottom: 20px;
     border-right: none;
   }
-  border-right: 10px solid black;
+  border-right: var(--s_nav_br);
   min-width: 200px;
   width: 20%;
   position: relative;
-
+  margin-top: var(--s_nav_mt);
   &__title {
     color: $green;
     text-align: center;
@@ -194,7 +216,8 @@ onMounted(() => {
 }
 
 .header {
-  background-color: black;
+  background-color: var(--s_header);
+  border-bottom: 2px solid var(--s_header_bb);
   position: relative;
   height: 60px;
   width: 100%;
@@ -272,13 +295,18 @@ onMounted(() => {
   border: 1px solid $green;
   position: absolute;
   right: 130px;
-  background-color: transparent;
+  background-color: var(--s_theme_changer_bgc);
   width: 50px;
   height: 22px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   padding: 0 5px;
+  & i {
+    font-size: 16px;
+    color: var(--s_theme_changer_color);
+    position: absolute;
+  }
 }
 
 
@@ -296,22 +324,4 @@ onMounted(() => {
   position: absolute;
 }
 
-.light {
-  background-image: linear-gradient(
-                  40deg,
-                  hsl(164deg 100% 94%) 0%,
-                  hsl(162deg 100% 92%) 20%,
-                  hsl(159deg 100% 90%) 37%,
-                  hsl(156deg 100% 99%) 52%,
-                  hsl(152deg 100% 98%) 64%,
-                  hsl(148deg 100% 97%) 74%,
-                  hsl(143deg 100% 96%) 80%,
-                  hsl(138deg 100% 95%) 86%,
-                  hsl(132deg 100% 95%) 91%,
-                  hsl(125deg 100% 95%) 100%
-  );
-}
-.dark {
-  background-color: #121212;
-}
 </style>

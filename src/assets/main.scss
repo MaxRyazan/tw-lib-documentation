@@ -4,6 +4,13 @@ $green: #01b075;
 
 :root {
     --tw_table_base_row_hover: rgba(26,43,71, 0.7);
+    --s_bgc_main: #121212;
+    --s_header: black;
+    --s_header_bb: black;
+    --s_nav_br: 10px solid black;
+    --s_nav_mt: 0px;
+    --s_theme_changer_bgc: transparent;
+    --s_theme_changer_color: burlywood;
 }
 
 
@@ -43,10 +50,10 @@ body, html {
     border: 1px solid $green;
     background-color: black;
     padding: 10px 20px;
-    @media (max-width: 1023px){
+    @media (max-width: 1023px) {
         width: 100%;
     }
-    @media (max-width: 400px){
+    @media (max-width: 400px) {
         width: 90%;
     }
 }
