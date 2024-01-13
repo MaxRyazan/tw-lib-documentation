@@ -25,7 +25,7 @@ async function copy() {
         <p class="sub_title">Полная кастомизация любого компонента, путём передачи пропсов - размеры, цвета, ховер-эффекты.</p>
         <p class="sub_title">Некоторые компоненты содержат дополнительные атрибуты, которые можно кастомизировать - слоты(например, для вывода сообщений от валидатора), строковые поля для префиксов, суффиксов и тп.</p>
         <div class="connect">
-            <p :class="{'dark_text_shadow': store.theme === Themes.dark}">Подключение в ваш проект:</p>
+            <p>Подключение в ваш проект:</p>
             <div class="copy">
                 <div class="toast" v-if="isToastVisible">Скопировано!</div>
                 <i class="pi pi-chevron-right"></i>
@@ -63,20 +63,20 @@ async function copy() {
   position: relative;
   height: 34px;
   width: 250px;
-  border: 1px solid white;
+  border: 1px solid var(--s_copy_border);
   border-radius: 6px;
   & input {
     cursor: default;
     border: none;
     padding-left: 30px;
-    color: white;
+    color: var(--s_copy_border);
     height: 100%;
     width: calc(100% - 50px);
     background-color: transparent;
     outline: none;
   }
   & span {
-    color: white;
+    color: var(--s_copy_border);
     cursor: pointer;
     position: absolute;
     right: 10px;
@@ -84,7 +84,7 @@ async function copy() {
     transform: translateY(-50%);
   }
   & i {
-    color: white;
+    color: var(--s_copy_border);
     position: absolute;
     left: 10px;
     top: 50%;
@@ -95,8 +95,8 @@ async function copy() {
   position: absolute;
   right: -140px;
   top: 2px;
-  color: rgba(255, 255, 255, .4);
-  border: 1px solid rgba(255, 255, 255, .4);
+  color: var(--_s_toast_color);
+  border: 1px solid var(--_s_toast_color);
   padding: 5px 10px;
   border-radius: 6px;
 }
@@ -106,19 +106,17 @@ async function copy() {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  //border: 1px solid rgb(36, 50, 87);
-  //background-color: rgb(36, 50, 87);
   border-radius: 12px;
   width: 100%;
   padding: 30px 5px;
 }
 .copy_text {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, .4);
+  border: 1px solid var(--_s_toast_color);
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--s_copy_color);
   height: 200px;
   @media (max-width: 540px) {
     font-size: 12px;
@@ -127,7 +125,7 @@ async function copy() {
 .filename {
   position: absolute;
   top: 5px;
-  color: rgba(255, 255, 255, .4);
+  color: var(--s_copy_color);
 }
 .copy_text_item {
   display: flex;
@@ -149,6 +147,7 @@ async function copy() {
   font-size: 30px;
   margin-bottom: 20px;
   text-align: center;
+  color: $green;
   @media (max-width: 540px) {
     font-size: 20px;
     margin: 10px 0 10px 0;
@@ -161,7 +160,7 @@ async function copy() {
 .home_wrapper {
   width: 100%;
   align-self: start;
-  color: #3eaf7c;
+  color: var(--s_nav_title_color);
   display: flex;
   flex-direction: column;
   gap: 15px;

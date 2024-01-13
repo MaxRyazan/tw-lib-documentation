@@ -59,6 +59,9 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_text_shadow', '1px 0 10px #01b075');
         document.documentElement.style.setProperty('--s_nav_item_color', 'orange');
         document.documentElement.style.setProperty('--s_nav_title_color', '#01b075');
+        document.documentElement.style.setProperty('--s_copy_border', 'white');
+        document.documentElement.style.setProperty('--_s_toast_color', 'rgba(255, 255, 255, .4)');
+        document.documentElement.style.setProperty('--s_copy_color', '#FFFFFF66');
     } else {
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
         document.documentElement.style.setProperty('--s_header', '#EEEEEE');
@@ -74,6 +77,9 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_text_shadow', 'none');
         document.documentElement.style.setProperty('--s_nav_item_color', '#1F2937');
         document.documentElement.style.setProperty('--s_nav_title_color', '#1F2937');
+        document.documentElement.style.setProperty('--s_copy_border', '#01b075');
+        document.documentElement.style.setProperty('--_s_toast_color', 'rgba(1,176,117, .4)');
+        document.documentElement.style.setProperty('--s_copy_color', 'rgba(0, 0, 0, .4)');
     }
 })
 </script>
