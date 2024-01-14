@@ -45,6 +45,7 @@ onMounted(() => {
 })
 watch(computed(() => store.theme), (value) => {
     if(value === Themes.dark) {
+        document.documentElement.style.setProperty('--tw_table_base_row_hover', 'rgba(26, 43, 71, 0.7)');
         document.documentElement.style.setProperty('--s_bgc_main', '#121212');
         document.documentElement.style.setProperty('--s_header', 'black');
         document.documentElement.style.setProperty('--s_header_bb', 'black');
@@ -65,7 +66,11 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_sub_header_active_color', 'orange');
         document.documentElement.style.setProperty('--sub_header_color', '#01b075');
         document.documentElement.style.setProperty('--s_description_text', '#01b075');
+        document.documentElement.style.setProperty('--s_tag_wrapper', 'black');
+        document.documentElement.style.setProperty('--s_code_attrs_color', 'white');
+        document.documentElement.style.setProperty('--s_code_tag', '#E8BF6A');
     } else {
+        document.documentElement.style.setProperty('--tw_table_base_row_hover', 'rgba(26, 43, 71, 0.05)');
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
         document.documentElement.style.setProperty('--s_header', 'white');
         document.documentElement.style.setProperty('--s_header_bb', 'rgba(1,176,117, .3)');
@@ -86,6 +91,9 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_sub_header_active_color', '#01b075');
         document.documentElement.style.setProperty('--sub_header_color', '#121212');
         document.documentElement.style.setProperty('--s_description_text', '#121212');
+        document.documentElement.style.setProperty('--s_tag_wrapper', 'transparent');
+        document.documentElement.style.setProperty('--s_code_attrs_color', '#121212');
+        document.documentElement.style.setProperty('--s_code_tag', '#d68100');
     }
 })
 </script>

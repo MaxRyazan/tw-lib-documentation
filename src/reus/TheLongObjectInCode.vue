@@ -7,10 +7,10 @@ defineProps<{
 </script>
 
 <template>
-    <div style="display: flex; flex-direction: column">
+    <div class="tw_long_object">
         {
-        <div v-for="([key, value], idx) of Object.entries(object)" :key="key" style="color: white; margin-left: 14px; margin-right: 4px; display: flex; gap: 4px;">
-            <span style="color: violet">{{ key }}:</span>
+        <div v-for="([key, value], idx) of Object.entries(object)" :key="key" class="tw_long_object__item">
+            <span class="tw_object_violet">{{ key }}:</span>
             <span style="display: flex">
                 <span v-if="typeof value === 'string'">"</span>
                 {{ value }}

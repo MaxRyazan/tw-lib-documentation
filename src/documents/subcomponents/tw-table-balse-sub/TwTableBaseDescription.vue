@@ -12,6 +12,7 @@ import TheLongArrayInCode from "@/reus/TheLongArrayInCode.vue";
 import {Themes} from "@/themes.ts";
 import {useStore} from "@/store.ts";
 import DarkTableBase from "@/reus/DarkTableBase.vue";
+import LightTableBase from "@/reus/LightTableBase.vue";
 const store = useStore()
 const smallScreen = ref(false)
 
@@ -52,7 +53,7 @@ onMounted(() => {
                                  {idx: 4, isSubTitle: true, textColor: '#ffb83c'}
                              ]"
             />
-            <tw-table-base v-else
+            <light-table-base v-else
                            :width="smallScreen ? '80%' : '700px'"
                            :header="['Parameter', 'Current value', 'Measure']"
                            :body="[
@@ -66,8 +67,8 @@ onMounted(() => {
                                    {a:'Water weight', b: 28, measure: 't.'}
                                ]"
                            :row_custom_settings="[
-                                 {idx: 0, isSubTitle: true, textColor: '#ffb83c'},
-                                 {idx: 4, isSubTitle: true, textColor: '#ffb83c'}
+                                 {idx: 0, isSubTitle: true, textColor: '#121212'},
+                                 {idx: 4, isSubTitle: true, textColor: '#121212'}
                              ]"
             />
         </div>
@@ -80,9 +81,11 @@ onMounted(() => {
                         <span>red_when_sub_zero</span>
                         <span>header_bgc="#1a2b47"</span>
                         <span>header_font_color="#b7d5d7"</span>
-                        <span>header_border_bottom="2px solid #00b6a6"</span>
-                        <span>table_border="1px solid #00b6a6"</span>
-                        <span>cell_font_color="#b7d5d7"</span>
+                        <span v-if="store.theme === Themes.dark">header_border_bottom="2px solid #00b6a6"</span>
+                        <span v-if="store.theme === Themes.dark">table_border="1px solid #00b6a6"</span>
+                        <span v-else>table_border="1px solid #121212"</span>
+                        <span v-if="store.theme === Themes.dark">cell_font_color="#b7d5d7"</span>
+                        <span v-else>cell_font_color="#121212"</span>
                         <span style="display: flex">
                             :header="<span class="code__tag">header</span>"
                         </span>
@@ -97,10 +100,16 @@ onMounted(() => {
             </template-tag>
             <script-setup-tag>
                 <reactive-variable dataType="array" var-name="settings">
-                    <the-long-object-in-code v-if="smallScreen"  :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />
-                    <the-long-object-in-code v-if="smallScreen"  :object="{idx: 4, isSubTitle: true, textColor: '#ffb83c'}" />
-                    <the-object-in-code v-if="!smallScreen" :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />
-                    <the-object-in-code v-if="!smallScreen" :object="{idx: 4, isSubTitle: true, textColor: '#ffb83c'}" />
+                    <the-long-object-in-code v-if="smallScreen && store.theme === Themes.dark" :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />
+                    <the-long-object-in-code v-if="smallScreen && store.theme === Themes.dark" :object="{idx: 4, isSubTitle: true, textColor: '#ffb83c'}" />
+                    <the-long-object-in-code v-if="smallScreen && store.theme === Themes.light" :object="{idx: 0, isSubTitle: true, textColor: '#121212'}" />
+                    <the-long-object-in-code v-if="smallScreen && store.theme === Themes.light" :object="{idx: 4, isSubTitle: true, textColor: '#121212'}" />
+
+
+                    <the-object-in-code v-if="!smallScreen && store.theme === Themes.dark" :object="{idx: 0, isSubTitle: true, textColor: '#ffb83c'}" />
+                    <the-object-in-code v-if="!smallScreen && store.theme === Themes.dark" :object="{idx: 4, isSubTitle: true, textColor: '#ffb83c'}" />
+                    <the-object-in-code v-if="!smallScreen && store.theme === Themes.light" :object="{idx: 0, isSubTitle: true, textColor: '#121212'}" />
+                    <the-object-in-code v-if="!smallScreen && store.theme === Themes.light" :object="{idx: 4, isSubTitle: true, textColor: '#121212'}" />
                 </reactive-variable>
                 <reactive-variable dataType="array" var-name="body">
                     <the-long-object-in-code :object="{a:'Mechanical properties:'}" />
