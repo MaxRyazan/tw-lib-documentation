@@ -25,7 +25,7 @@ const store = useStore()
             </div>
             <div class="container">
                 <div class="example_container">
-                    <tw-input width="300px" prefix="User name:" prefix_color="white"/>
+                    <tw-input width="300px" prefix="User name:" :prefix_color="store.theme ===Themes.dark ? 'white': '#121212'"/>
                 </div>
 
                 <div class="tag_wrapper">
@@ -34,7 +34,8 @@ const store = useStore()
                             <span>v-model="username"</span>
                             <span>width="300px"</span>
                             <span>prefix="User name:"</span>
-                            <span>prefix_color="white"</span>
+                            <span v-if="store.theme ===Themes.dark">prefix_color="white"</span>
+                            <span v-else>prefix_color="#121212"</span>
                         </div>
                     </the-tag>
                 </div>
@@ -66,7 +67,7 @@ const store = useStore()
             <div class="container">
                 <div class="example_container">
                     <tw-input style="margin-bottom: 20px;" vertical prefix="User name:" prefix_color="orange" bgc="transparent" border="none" border_bottom="1px solid orange"
-                              caret_color="white" text_center input_text_color="white"/>
+                              :caret_color="store.theme ===Themes.dark ? 'white': '#121212'" text_center :input_text_color="store.theme ===Themes.dark ? 'white': '#121212'"/>
                 </div>
 
                 <div class="tag_wrapper">
@@ -79,9 +80,11 @@ const store = useStore()
                             <span>bgc="transparent"</span>
                             <span>border="none"</span>
                             <span>border_bottom="1px solid orange"</span>
-                            <span>caret_color="white"</span>
+                            <span v-if="store.theme ===Themes.dark">caret_color="white"</span>
+                            <span v-else>caret_color="#121212"</span>
                             <span>text_center</span>
-                            <span>input_text_color="white"</span>
+                            <span v-if="store.theme ===Themes.dark">input_text_color="white"</span>
+                            <span v-else>input_text_color="#121212"</span>
                         </div>
                     </the-tag>
                 </div>
