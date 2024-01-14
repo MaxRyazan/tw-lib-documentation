@@ -6,6 +6,7 @@ import {RowSettings} from "@/types";
 import {Themes} from "@/themes";
 import {useStore} from "@/store";
 import DarkTableBase from "@/reus/DarkTableBase.vue";
+import LightTableBase from "@/reus/LightTableBase.vue";
 
 const store = useStore()
 const screenSize: Ref<number> = ref(ScreenSizes.s1900)
@@ -58,14 +59,12 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
                 :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
 
         />
-        <tw-table-base
+        <light-table-base
                 v-else
                 header_padding="14px"
                 :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-                table_bgc="white"
-                header_font_color="green"
                 :body="screenSize < ScreenSizes.s1440 ? smallProps : props"
                 :header="screenSize < ScreenSizes.s1440 ? smallHeader : header"
                 :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
@@ -80,13 +79,11 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
                 :header="['Название', 'Аргументы', 'Описание']"
                 :body="emits"
         />
-        <tw-table-base
+        <light-table-base
                 v-else
                 :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-                header_font_color="orange"
-                table_bgc="white"
                 :header="['Название', 'Аргументы', 'Описание']"
                 :body="emits"/>
         <p :class="{'dark_text_shadow': store.theme === Themes.dark}"
@@ -100,13 +97,11 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
                 :header="screenSize <= ScreenSizes.s480 ? smallVariablesHeader : variablesHeader"
                 :body="screenSize <= ScreenSizes.s480 ? smallVariables : variables"
         />
-        <tw-table-base
+        <light-table-base
                 v-if="pr.variables && store.theme === Themes.light"
                 :width="screenSize <= ScreenSizes.s1440 ? '100%' : '80%'"
                 :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
                 :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-                header_font_color="orange"
-                table_bgc="white"
                 :header="screenSize <= ScreenSizes.s480 ? smallVariablesHeader : variablesHeader"
                 :body="screenSize <= ScreenSizes.s480 ? smallVariables : variables"
         />
