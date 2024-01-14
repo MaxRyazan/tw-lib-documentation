@@ -69,6 +69,7 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_tag_wrapper', 'black');
         document.documentElement.style.setProperty('--s_code_attrs_color', 'white');
         document.documentElement.style.setProperty('--s_code_tag', '#E8BF6A');
+        document.documentElement.style.setProperty('--s_small_nav_bgc', 'black');
     } else {
         document.documentElement.style.setProperty('--tw_table_base_row_hover', 'rgba(26, 43, 71, 0.05)');
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
@@ -94,8 +95,9 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_tag_wrapper', 'transparent');
         document.documentElement.style.setProperty('--s_code_attrs_color', '#121212');
         document.documentElement.style.setProperty('--s_code_tag', '#d68100');
+        document.documentElement.style.setProperty('--s_small_nav_bgc', 'white');
     }
-})
+}, {immediate: true})
 </script>
 
 <template>
@@ -210,11 +212,16 @@ watch(computed(() => store.theme), (value) => {
     z-index: 99;
     width: 120px;
     min-width: 120px;
-    top: -2px;
+    top: 0;
     display: none;
-    border-right: 10px solid black;
-    padding-bottom: 20px;
-    border-right: none;
+    background-color: var(--s_small_nav_bgc) !important;
+    padding: 10px 0;
+    border-right: 1px solid rgba( 1,176,117, .4);
+    border-bottom: 1px solid rgba( 1,176,117, .4);
+    margin-left: 0;
+    margin-top: -2px;
+    border-radius: 0;
+    box-shadow: none !important;
   }
   &__title {
     color: var(--s_nav_title_color);
@@ -296,8 +303,8 @@ watch(computed(() => store.theme), (value) => {
 .burger_nav {
   width: 40px;
   height: 24px;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--s_code_attrs_color);
+  border-bottom: 2px solid var(--s_code_attrs_color);
   display: none;
   position: relative;
 
@@ -318,7 +325,7 @@ watch(computed(() => store.theme), (value) => {
     transform: translateY(-50%);
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: var(--s_code_attrs_color);
   }
 
   @media (max-width: 640px) {
@@ -329,7 +336,7 @@ watch(computed(() => store.theme), (value) => {
 .show {
   display: block !important;
   z-index: 999;
-  background-color: black;
+  background-color: var(--s_nav_bgc);
 }
 
 .theme_changer {
