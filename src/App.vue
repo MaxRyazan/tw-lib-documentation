@@ -12,6 +12,7 @@ import {getScreenSize} from "@/use/getScreenSize";
 import {ScreenSizes} from "@/ScreenSizes";
 import {useStore} from "@/store";
 import db from './../package.json'
+import ArrayOfObjects from "@/reus/ArrayOfObjects.vue";
 
 const store = useStore()
 const currentComponent = shallowRef(HomeComponent)
@@ -98,6 +99,17 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_small_nav_bgc', 'white');
     }
 }, {immediate: true})
+
+
+
+const screenSize: Ref<number> = ref(ScreenSizes.s1900)
+
+onMounted(() => {
+    screenSize.value = getScreenSize()
+    window.addEventListener('resize', () => {
+        screenSize.value = getScreenSize()
+    })
+})
 </script>
 
 <template>
