@@ -12,7 +12,6 @@ import {getScreenSize} from "@/use/getScreenSize";
 import {ScreenSizes} from "@/ScreenSizes";
 import {useStore} from "@/store";
 import db from './../package.json'
-import ArrayOfObjects from "@/reus/ArrayOfObjects.vue";
 
 const store = useStore()
 const currentComponent = shallowRef(HomeComponent)

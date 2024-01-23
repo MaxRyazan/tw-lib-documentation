@@ -25,7 +25,7 @@ const store = useStore()
             </div>
             <div class="container">
                 <div class="example_container">
-                    <tw-input width="300px" prefix="User name:" :prefix_color="store.theme ===Themes.dark ? 'white': '#121212'"/>
+                    <tw-input width="300px" prefix="User name:" :prefix_color="store.theme === Themes.dark ? 'white': '#121212'"/>
                 </div>
 
                 <div class="tag_wrapper">

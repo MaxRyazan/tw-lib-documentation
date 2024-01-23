@@ -87,13 +87,13 @@ onMounted(() => {
                         <span v-if="store.theme === Themes.dark">cell_font_color="#b7d5d7"</span>
                         <span v-else>cell_font_color="#121212"</span>
                         <span style="display: flex">
-                            :header="<span class="code__tag">header</span>"
+                            :header="<span class="code__variable">header</span>"
                         </span>
                         <span style="display: flex">
-                            :body="<span class="code__tag">body</span>"
+                            :body="<span class="code__variable">body</span>"
                         </span>
                         <span style="display: flex">
-                            row_custom_settings="<span class="code__tag">settings</span>"
+                            row_custom_settings="<span class="code__variable">settings</span>"
                         </span>
                     </div>
                 </the-tag>

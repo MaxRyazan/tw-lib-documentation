@@ -138,6 +138,9 @@ body, html {
     color: var(--s_code_tag);
     white-space: nowrap;
   }
+  &__variable {
+    color: #af0069;
+  }
 
   &__attrs {
     color: var(--s_code_attrs_color);
