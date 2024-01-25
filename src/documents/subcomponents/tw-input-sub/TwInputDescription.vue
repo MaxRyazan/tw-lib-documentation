@@ -4,31 +4,33 @@ import TagOneLine from "@/reus/TagOneLine.vue";
 import TheTag from "@/reus/TheTag.vue";
 import {Themes} from "@/themes.ts";
 import {useStore} from "@/store.ts";
+import DescriptionSample from "@/reus/samples/DescriptionSample.vue";
+import ExampleContainer from "@/reus/samples/ExampleContainer.vue";
 
 const store = useStore()
 </script>
 
 <template>
-    <div style="width: 100%;">
-        <div class="component">
-            <p :class="{'dark_text_shadow': store.theme === Themes.dark}" class="component__title">Компонент TwInput позволяет создать input с опциональными prefix и postfix строками.
-                Доступно горизонтальное и вертикальное размещение. Доступен слот для размещения информации от валидатора,
-                или любой другой.</p>
-            <div class="container">
-                <div class="example_container">
+    <description-sample>
+        <template #description>
+            Компонент TwInput позволяет создать input с опциональными prefix и postfix строками.
+            Доступно горизонтальное и вертикальное размещение. Доступен слот для размещения информации от валидатора,
+            или любой другой.
+        </template>
+        <template #exampleAndCode>
+            <example-container>
+                <template #example>
                     <tw-input style="margin-left: 8%;" />
-                </div>
-
-                <div class="tag_wrapper">
+                </template>
+                <template #code>
                     <tag-one-line tag="tw-input" title=""></tag-one-line>
-                </div>
-            </div>
-            <div class="container">
-                <div class="example_container">
+                </template>
+            </example-container>
+            <example-container>
+                <template #example>
                     <tw-input width="300px" prefix="User name:" :prefix_color="store.theme === Themes.dark ? 'white': '#121212'"/>
-                </div>
-
-                <div class="tag_wrapper">
+                </template>
+                <template #code>
                     <the-tag tag="tw-input" title="">
                         <div class="attrs_list">
                             <span>v-model="username"</span>
@@ -38,15 +40,14 @@ const store = useStore()
                             <span v-else>prefix_color="#121212"</span>
                         </div>
                     </the-tag>
-                </div>
-            </div>
-            <div class="container">
-                <div class="example_container">
+                </template>
+            </example-container>
+            <example-container>
+                <template #example>
                     <tw-input type="number" height="22px" text_center border_radius="12px" width="260px" input_width="80px" prefix="Enter you weight:"
                               postfix="kg" prefix_color="orange" postfix_color="orange"/>
-                </div>
-
-                <div class="tag_wrapper">
+                </template>
+                <template #code>
                     <the-tag tag="tw-input" title="">
                         <div class="attrs_list">
                             <span>v-model="weight"</span>
@@ -62,15 +63,14 @@ const store = useStore()
                             <span>type="number"</span>
                         </div>
                     </the-tag>
-                </div>
-            </div>
-            <div class="container">
-                <div class="example_container">
+                </template>
+            </example-container>
+            <example-container>
+                <template #example>
                     <tw-input style="margin-bottom: 20px;" vertical prefix="User name:" prefix_color="orange" bgc="transparent" border="none" border_bottom="1px solid orange"
                               :caret_color="store.theme ===Themes.dark ? 'white': '#121212'" text_center :input_text_color="store.theme ===Themes.dark ? 'white': '#121212'"/>
-                </div>
-
-                <div class="tag_wrapper">
+                </template>
+                <template #code>
                     <the-tag tag="tw-input" title="">
                         <div class="attrs_list">
                             <span>v-model="username"</span>
@@ -87,10 +87,10 @@ const store = useStore()
                             <span v-else>input_text_color="#121212"</span>
                         </div>
                     </the-tag>
-                </div>
-            </div>
-        </div>
-    </div>
+                </template>
+            </example-container>
+        </template>
+    </description-sample>
 </template>
 
 <style scoped lang="scss">
