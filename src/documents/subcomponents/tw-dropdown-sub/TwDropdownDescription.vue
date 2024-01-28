@@ -5,6 +5,9 @@ import ScriptSetupTag from "@/reus/ScriptSetupTag.vue";
 import ReactiveVariable from "@/reus/ReactiveVariable.vue";
 import DescriptionSample from "@/reus/samples/DescriptionSample.vue";
 import ExampleContainer from "@/reus/samples/ExampleContainer.vue";
+import {ref} from "vue";
+
+const distance = ref(35)
 </script>
 
 <template>
@@ -15,7 +18,7 @@ import ExampleContainer from "@/reus/samples/ExampleContainer.vue";
         <template #exampleAndCode>
             <example-container>
                 <template #example>
-                    <tw-dropdown :variants="[45, 55, 65]"/>
+                    <tw-dropdown v-model="distance" :variants="[45, 55, 65]"/>
                 </template>
                 <template #code>
                     <template-tag>
