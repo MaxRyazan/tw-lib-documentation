@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 import ApiSample from "@/reus/samples/ApiSample.vue";
 import {reactive} from "vue";
@@ -16,6 +16,7 @@ const props = reactive([
     ['font_size', 'Нет', "string", "Размер текста в компоненте."],
     ['font_family', 'Нет', "string", "Настройка шрифта в компоненте."],
     ['font_weight', 'Нет', "string", "Настройка жирности шрифта в компоненте."],
+    ['arrow_color', 'Нет', "string", "Цвет иконки стрелки."],
 ])
 const emits = reactive([
     ['-', '-', "-"],
