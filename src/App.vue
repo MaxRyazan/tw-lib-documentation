@@ -12,6 +12,7 @@ import {getScreenSize} from "@/use/getScreenSize";
 import {ScreenSizes} from "@/ScreenSizes";
 import {useStore} from "@/store";
 import db from './../package.json'
+import TwMultiDropdownDoc from "@/documents/TwMultiDropdownDoc.vue";
 
 const store = useStore()
 const currentComponent = shallowRef(HomeComponent)
@@ -155,6 +156,9 @@ onMounted(() => {
                 </div>
                 <div @click="seeThis(TwDropdownDoc)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === TwDropdownDoc}">TwDropdown
+                </div>
+                <div @click="seeThis(TwMultiDropdownDoc)" class="nav__list_item"
+                     :class="{'tw_active': currentComponent === TwMultiDropdownDoc}">TwMultiDropdown
                 </div>
             </div>
         </div>

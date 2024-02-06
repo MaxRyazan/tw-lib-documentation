@@ -4,15 +4,9 @@ import TheTag from "@/reus/TheTag.vue";
 import {onMounted, ref, Ref} from "vue";
 import {ScreenSizes} from "@/ScreenSizes.js";
 import {getScreenSize} from "@/use/getScreenSize";
-import {Themes} from "@/themes";
-import {useStore} from "@/store";
 import DescriptionSample from "@/reus/samples/DescriptionSample.vue";
-import TemplateTag from "@/reus/TemplateTag.vue";
 import ExampleContainer from "@/reus/samples/ExampleContainer.vue";
-import ReactiveVariable from "@/reus/ReactiveVariable.vue";
-import ScriptSetupTag from "@/reus/ScriptSetupTag.vue";
 
-const store = useStore()
 const screenSize: Ref<number> = ref(ScreenSizes.s1900)
 onMounted(() => {
     screenSize.value = getScreenSize()

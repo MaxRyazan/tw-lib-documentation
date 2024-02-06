@@ -18,13 +18,13 @@ const props = defineProps<{
         </div>
         <div style="margin-left: 10px">
             <div :style="{flexDirection: condition ? 'column' : 'row'}" style="display: flex; flex-wrap: wrap;" v-for="obj in array" :key="obj">
-                <span class="tw-array__const-name">{</span>
+                <span class="tw-array__dotes-color">{</span>
                 <div v-for="[key, value] of Object.entries(obj)">
                     <span class="tw-array__field-key">{{key}}</span>
-                    <span>:</span>
+                    <span class="tw-array__dotes-color">:</span>
                     <span class="tw-array__field-value">{{value}},</span>
                 </div>
-                <span class="tw-array__const-name">},</span>
+                <span class="tw-array__dotes-color">},</span>
             </div>
         </div>
         <span class="tw-array__const-name">])</span>
@@ -37,6 +37,11 @@ const props = defineProps<{
     color: #CC7832;
   }
   &__const-name {
+    color: var(--s_variable_color);
+    padding: 0 3px;
+  }
+  &__dotes-color{
+    padding: 0 3px;
     color: var(--s_code_attrs_color);
   }
   &__reactive {
