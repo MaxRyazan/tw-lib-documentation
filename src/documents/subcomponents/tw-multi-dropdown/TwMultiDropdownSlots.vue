@@ -3,9 +3,7 @@
 </script>
 
 <template>
-<div>
-
-</div>
+    <p class="scss_green">Компонент не имеет слотов.</p>
 </template>
 
 <style scoped lang="scss">
