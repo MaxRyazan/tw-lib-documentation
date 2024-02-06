@@ -213,7 +213,7 @@ onMounted(() => {
 
 .nav {
   border-right: var(--s_nav_br);
-  min-width: 200px;
+  min-width: 180px;
   width: 20%;
   position: relative;
   margin-top: var(--s_nav_mt);
@@ -225,8 +225,6 @@ onMounted(() => {
     position: absolute;
     border-right: none;
     z-index: 99;
-    width: 120px;
-    min-width: 120px;
     top: 0;
     display: none;
     background-color: var(--s_small_nav_bgc) !important;
