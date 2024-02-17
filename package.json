@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "add": "git add dist -f",
+    "commit": "git commit -m \"upd dist\"",
+    "subtree" : "git subtree push --prefix dist origin gh-pages2 "
   },
   "dependencies": {
     "pinia": "^2.1.7",
     "primeicons": "^6.0.1",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "twins-vue": "^0.0.32",
+    "twins-vue": "^0.0.34",
     "vue": "^3.3.8"
   },
   "devDependencies": {
