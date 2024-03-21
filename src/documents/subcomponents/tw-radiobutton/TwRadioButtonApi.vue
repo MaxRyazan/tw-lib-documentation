@@ -2,28 +2,35 @@
 
 import ApiSample from "@/reus/samples/ApiSample.vue";
 
-const settings = {
-    in_group: 'boolean',
-    disabled: 'boolean',
-    rounded: 'boolean'
+const Variants = {
+    name: 'Variants',
+    variants: {dataType: 'Array<string | number>', title: 'Массив вариантов выбора.'},
+}
+const Settings = {
+    name: 'Settings',
+    in_group: {dataType: 'boolean', title: 'Сгруппировать без пробелов?'},
+    disabled: {dataType: 'boolean', title: 'Активировать состояние "отключено" ?'},
+    rounded: {dataType: 'boolean', title: 'Сделать границы закруглёнными?'},
 }
 
-const IStyles  = {
-    item_width: 'string',
-    item_height: 'string',
-    item_bgc: 'string',
-    item_border: 'string',
-    text_color: 'string',
-    active_color: 'string',
-    hover_color: 'string',
-    font_size: 'string',
-    font_family: 'string',
-    font_weight: 'string'
+const IStyles = {
+    name: 'IStyles',
+    item_width: {dataType: 'string', title: 'Длина каждого элемента в компоненте.'},
+    item_height: {dataType: 'string', title: 'Высота каждого элемента в компоненте.'},
+    item_bgc: {dataType: 'string', title: 'background-color каждого элемента в компоненте.'},
+    item_border: {dataType: 'string', title: 'border каждого элемента в компоненте.'},
+    text_color: {dataType: 'string', title: 'color каждого элемента в компоненте.'},
+    active_color: {dataType: 'string', title: 'color при клике по элементу в компоненте.'},
+    hover_color: {dataType: 'string', title: 'color:hover для элемента в компоненте.'},
+    font_size: {dataType: 'string', title: 'font-size для каждого элемента в компоненте.'},
+    font_family: {dataType: 'string', title: 'font-family для каждого элемента в компоненте.'},
+    font_weight: {dataType: 'string', title: 'font-weight для каждого элемента в компоненте.'}
 }
+
 
 const props = [
-    ['variants', 'Да', `Array< { [key: T]: Array<T> } >, где T = number | string`, "Массив вариантов выбора."],
-    ['settings', 'Нет', `{in_group: 'boolean', rounded: 'boolean', disabled: 'boolean' }`, `Опциональный объект с настройками компонента. Где:
+    ['variants', 'Да', `Variants`, "Массив вариантов выбора."],
+    ['settings', 'Нет', `Settings`, `Опциональный объект с настройками компонента. Где:
     in_group - варианты выбора без расстояния между ними. rounded - округлые границы у элементов выбора, disabled - неактивные элементы выбора`],
     ['styles', 'Нет', `IStyles`, "Объект настройки стилей для компонента."],
 ]
@@ -50,6 +57,7 @@ const variables = [
     <api-sample
             :props="props"
             :emits="emits"
+            :interfaces="[IStyles, Settings ,Variants]"
             :variables="variables"
     />
 </template>

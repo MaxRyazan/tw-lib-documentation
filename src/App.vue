@@ -75,6 +75,7 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_code_attrs_color', 'white');
         document.documentElement.style.setProperty('--s_code_tag', '#E8BF6A');
         document.documentElement.style.setProperty('--s_small_nav_bgc', 'black');
+        document.documentElement.style.setProperty('--tw_white_black', 'white');
     } else {
         document.documentElement.style.setProperty('--tw_table_base_row_hover', 'rgba(26, 43, 71, 0.05)');
         document.documentElement.style.setProperty('--s_bgc_main', '#EEEEEE');
@@ -101,6 +102,7 @@ watch(computed(() => store.theme), (value) => {
         document.documentElement.style.setProperty('--s_code_attrs_color', '#121212');
         document.documentElement.style.setProperty('--s_code_tag', '#d68100');
         document.documentElement.style.setProperty('--s_small_nav_bgc', 'white');
+        document.documentElement.style.setProperty('--tw_white_black', '#121212');
     }
 }, {immediate: true})
 

@@ -7,6 +7,7 @@ import {Themes} from "@/themes";
 import {useStore} from "@/store";
 import DarkTableBase from "@/reus/DarkTableBase.vue";
 import LightTableBase from "@/reus/LightTableBase.vue";
+import TheInterface from "@/reus/TheInterface.vue";
 
 const store = useStore()
 const screenSize: Ref<number> = ref(ScreenSizes.s1900)
@@ -18,6 +19,7 @@ const pr = defineProps<{
     emits?: Array<any>
     variables?: Array<any>
     rowSettings?: Array<RowSettings>
+    interfaces?: Array<any>
 }>()
 
 onMounted(() => {
@@ -70,6 +72,12 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
                 :row_custom_settings="screenSize < ScreenSizes.s1440 ? [] : rowSettings"
                 :multicolor="screenSize < ScreenSizes.s1440"
         />
+
+        <div style="display: flex; flex-wrap: wrap; gap: 60px"
+             :style="{width: screenSize <= ScreenSizes.s1440 ? '90%' : '80%'}" v-if="pr.interfaces?.length">
+            <the-interface v-for="(int, idx) in pr.interfaces" :key="idx" :interfaceName="int.name" :interface="int" />
+        </div>
+
         <p :class="{'dark_text_shadow': store.theme === Themes.dark}" style="margin: 0 auto; color: darkorange; border-bottom: 2px solid darkorange; padding: 0 10px 5px 10px; cursor: default">Возможные действия - Emits</p>
         <dark-table-base
                 v-if="store.theme === Themes.dark"
