@@ -1,8 +1,17 @@
 <script setup lang="ts">
+import {ref} from "vue";
+
 const props = defineProps<{
     interface: {[key: string]: {dataType: string | boolean | number, title: string}}
     interfaceName: string
 }>()
+
+const tooltipStyles = ref([
+    {'background-color':  '#01b075' },
+    {'border-radius':  '12px' },
+    {'color': '#121212' },
+])
+
 </script>
 
 <template>
@@ -14,7 +23,7 @@ const props = defineProps<{
         <div class="tw_int_fields">
             <span class="tw_int_fields__list tw_int_list" v-for="[key, value] of Object.entries(props.interface) ">
                 <div v-if="key !== 'name'">
-                    <span :title="value.title" class="tw_int_list__key">{{key}}</span>
+                    <span v-tooltip="{text: value.title, styles: tooltipStyles}" class="tw_int_list__key">{{key}}</span>
                     <span class="tw_int_list__dot">:</span>
                     <span class="tw_int_list__value">{{value.dataType}}</span>
                 </div>
