@@ -14,7 +14,6 @@ import {useStore} from "@/store.ts";
 import DarkTableBase from "@/reus/DarkTableBase.vue";
 import LightTableBase from "@/reus/LightTableBase.vue";
 import DescriptionSample from "@/reus/samples/DescriptionSample.vue";
-import TagOneLine from "@/reus/TagOneLine.vue";
 import ExampleContainer from "@/reus/samples/ExampleContainer.vue";
 const store = useStore()
 const smallScreen = ref(false)
@@ -117,7 +116,7 @@ onMounted(() => {
                             <the-object-in-code v-if="!smallScreen && store.theme === Themes.light" :object="{idx: 4, isSubTitle: true, textColor: '#121212'}" />
                         </reactive-variable>
                         <reactive-variable dataType="array" var-name="body">
-                            <the-long-object-in-code :object="{a:'Mechanical properties:'}" />
+                            <the-object-in-code :object="{a:'Mechanical properties:'}" />
                             <the-object-in-code v-if="!smallScreen"  :object="{a:'Pressure', b:12, measure: 'atm.'}" />
                             <the-long-object-in-code v-else :object="{a:'Pressure', b:12, measure: 'atm.'}" />
                             <the-object-in-code v-if="!smallScreen"  :object="{a:'Temperature', b:1011, measure: 'f.'}" />
@@ -125,7 +124,7 @@ onMounted(() => {
                             <the-object-in-code v-if="!smallScreen"  :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />
                             <the-long-object-in-code v-else :object="{a:'Danger index', b: 3, measure: 'lvl.'}" />
 
-                            <the-long-object-in-code :object="{a:'Calculating properties:'}" />
+                            <the-object-in-code :object="{a:'Calculating properties:'}" />
                             <the-object-in-code v-if="!smallScreen"  :object="{a:'Flow', b:324.12, measure: 't.'}" />
                             <the-long-object-in-code v-else :object="{a:'Flow', b:324.12, measure: 't.'}" />
                             <the-object-in-code v-if="!smallScreen"  :object="{a:'Balls weight', b:43, measure: 't.'}" />

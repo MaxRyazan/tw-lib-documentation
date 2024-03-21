@@ -16,7 +16,7 @@
     "primeicons": "^6.0.1",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "twins-vue": "^0.0.38",
+    "twins-vue": "^0.0.43",
     "vue": "^3.3.8"
   },
   "devDependencies": {

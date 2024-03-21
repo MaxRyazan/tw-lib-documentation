@@ -14,6 +14,9 @@ import {useStore} from "@/store";
 import db from './../package.json'
 import TwMultiDropdownDoc from "@/documents/TwMultiDropdownDoc.vue";
 import TwCheckboxDoc from "@/documents/TwCheckboxDoc.vue";
+import TwRadioButtonDoc from "@/documents/TwRadioButtonDoc.vue";
+import TwPaginatorDoc from "@/documents/TwPaginatorDoc.vue";
+import V_TooltipDirective from "@/directives/V_TooltipDirective.vue";
 
 const store = useStore()
 const currentComponent = shallowRef(HomeComponent)
@@ -146,9 +149,6 @@ onMounted(() => {
                 <div @click="seeThis(HomeComponent)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === HomeComponent}">About
                 </div>
-                <div @click="seeThis(TwTableBaseDoc)" class="nav__list_item"
-                     :class="{'tw_active': currentComponent === TwTableBaseDoc }">TwTableBase
-                </div>
                 <div @click="seeThis(TwButtonDoc)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === TwButtonDoc}">TwButton
                 </div>
@@ -158,11 +158,26 @@ onMounted(() => {
                 <div @click="seeThis(TwCheckboxDoc)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === TwCheckboxDoc}">TwCheckbox
                 </div>
+                <div @click="seeThis(TwRadioButtonDoc)" class="nav__list_item"
+                     :class="{'tw_active': currentComponent === TwRadioButtonDoc}">TwRadioButton
+                </div>
                 <div @click="seeThis(TwDropdownDoc)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === TwDropdownDoc}">TwDropdown
                 </div>
                 <div @click="seeThis(TwMultiDropdownDoc)" class="nav__list_item"
                      :class="{'tw_active': currentComponent === TwMultiDropdownDoc}">TwMultiDropdown
+                </div>
+                <div @click="seeThis(TwTableBaseDoc)" class="nav__list_item"
+                     :class="{'tw_active': currentComponent === TwTableBaseDoc }">TwTableBase
+                </div>
+                <div @click="seeThis(TwPaginatorDoc)" class="nav__list_item"
+                     :class="{'tw_active': currentComponent === TwPaginatorDoc}">TwPaginator
+                </div>
+            </div>
+            <p class="nav__title">Директивы</p>
+            <div class="nav__list">
+                <div @click="seeThis(V_TooltipDirective)" class="nav__list_item"
+                     :class="{'tw_active': currentComponent === V_TooltipDirective}">v-tooltip
                 </div>
             </div>
         </div>
