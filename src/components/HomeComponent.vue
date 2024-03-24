@@ -47,7 +47,7 @@ async function copy() {
                 </div>
 
                 <div class="copy_text">
-                    <span class="filename">your main style.scss file</span>
+                    <span class="filename">main.scss file</span>
                     <span class="copy_text_import">@import 'twins-vue/tw-styles.css';</span>
                     <span>...</span>
                 </div>

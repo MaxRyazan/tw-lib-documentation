@@ -10,7 +10,7 @@ import {useStore} from "@/store";
 import {Themes} from "@/themes";
 
 const agreement = ref(false)
-const agreement2 = ref(false)
+const agreement2 = ref(true)
 const store = useStore()
 </script>
 
@@ -60,7 +60,6 @@ const store = useStore()
                         <the-tag title="" tag="tw-checkbox">
                             <div class="attrs_list">
                                 <span>v-model="<span class="code__variable">agreement</span>"</span>
-                                <span>orientation_left</span>
                                 <span>border="<span class="code__variable">2px solid orange</span>"</span>
                                 <span>bgc="<span class="code__variable">black</span>"</span>
                                 <span>checked_color="<span class="code__variable">orange</span>"</span>
@@ -77,7 +76,7 @@ const store = useStore()
                             <span style="color: #ac6700">const</span>
                             <span class="code__variable"> agreement =</span>
                             <span class="code__tag"> ref(</span>
-                            <span class="code__variable">false</span>
+                            <span class="code__variable">true</span>
                             <span  class="code__tag">)</span>
                         </div>
                     </script-setup-tag>

@@ -24,27 +24,29 @@ onMounted(() => {
 </script>
 
 <template>
-    <p class="scss_green">
-        Компонент имеет несколько именованных слотов. Все слоты расположены перед названием кнопки или текста label.
-    </p>
-    <dark-table-base
-            v-if="store.theme === Themes.dark"
-            header_padding="14px"
-            :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
-            :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-            :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-            :header="['Название слота', 'Описание слота']"
-            :body="body"
-    />
-    <light-table-base
-            v-else
-            header_padding="14px"
-            :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
-            :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-            :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
-            :header="['Название слота', 'Описание слота']"
-            :body="body"
-    />
+    <div>
+        <p class="scss_green">
+            Компонент имеет несколько именованных слотов. Все слоты расположены перед названием кнопки или текста label.
+        </p>
+        <dark-table-base
+                v-if="store.theme === Themes.dark"
+                header_padding="14px"
+                :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
+                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                :header="['Название слота', 'Описание слота']"
+                :body="body"
+        />
+        <light-table-base
+                v-else
+                header_padding="14px"
+                :width="screenSize <= ScreenSizes.s1440 ? '90%' : '80%'"
+                :header_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                :cell_font_size="screenSize <= ScreenSizes.s480 ? '2.5vw' : (screenSize <= ScreenSizes.s1440 ? '1.2vw' :'0.75vw')"
+                :header="['Название слота', 'Описание слота']"
+                :body="body"
+        />
+    </div>
 </template>
 
 <style scoped lang="scss">

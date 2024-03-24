@@ -265,7 +265,8 @@ onMounted(() => {
     cursor: default;
     text-shadow: var(--s_text_shadow);
     @media (max-width: 640px) {
-      display: none;
+      font-size: 18px;
+      padding: 10px 5px;
     }
   }
 
