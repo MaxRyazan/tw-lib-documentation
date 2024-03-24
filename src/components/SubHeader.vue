@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import {ref} from "vue";
+defineProps<{
+    directive?: boolean
+}>()
 
 const emit = defineEmits<{
     (e: 'showDescription'):void
@@ -37,7 +40,7 @@ function clickOnSubtitle(subtitle: string){
     <span @click="clickOnSubtitle('Api')"
           class="sub_nav_item"
           :class="{'active': currentSubTitle === 'Api'}">Api</span>
-    <span @click="clickOnSubtitle('Слоты')"
+    <span v-if="!directive" @click="clickOnSubtitle('Слоты')"
           class="sub_nav_item"
           :class="{'active': currentSubTitle === 'Слоты'}">Слоты</span>
 </div>
