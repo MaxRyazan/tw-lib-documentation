@@ -141,7 +141,13 @@ const settings = {
                                 <span>
                                     <colored-text bl_wh m="0"> totalPages.</colored-text>
                                     <colored-text violet m="0px">value</colored-text>
-                                    <colored-text bl_wh>= resObject.total</colored-text>
+                                    <colored-text bl_wh>=
+                                        <colored-text violet m="0">Math</colored-text>
+                                        <colored-text bl_wh m="0">.</colored-text>
+                                        <colored-text yellow m="0">ceil</colored-text>
+                                        (resObject.total / limit.
+                                        <colored-text violet m="0">value</colored-text>
+                                        )</colored-text>
                                 </span>
                             </div>
                         </on-mounted-template>

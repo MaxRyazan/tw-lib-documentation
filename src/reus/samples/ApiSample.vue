@@ -73,7 +73,7 @@ const smallVariablesHeader = reactive(['Название', 'Описание'])
                 :multicolor="screenSize < ScreenSizes.s1440"
         />
 
-        <div style="display: flex; flex-wrap: wrap; gap: 60px"
+        <div style="display: flex; flex-wrap: wrap; gap: 40px"
              :style="{width: screenSize <= ScreenSizes.s1440 ? '90%' : '80%'}" v-if="pr.interfaces?.length">
             <the-interface v-for="(int, idx) in pr.interfaces" :key="idx" :interfaceName="int.name" :interface="int" />
         </div>
